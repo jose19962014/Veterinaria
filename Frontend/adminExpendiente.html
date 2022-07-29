@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/AdminExpediente.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asap&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h3 style="margin-top: 2%">Formulario</h3>
+    <!-- div de cuestionario -->
+    <div id="divformconatiner">
+      <form>
+        <!-- row1 -->
+        <div class="row rowshight">
+          <!--columna 1 row 1-->
+          <div class="cols">
+            <label for="nombreMascote">Nombre de la mascota</label>
+          </div>
+          <!--columna 2 row 1-->
+          <div class="cols">
+            <input id="nombreMascote" type="text" class="cols-input" />
+          </div>
+        </div>
+        <!-- row2 -->
+        <div class="row rowshight">
+          <!--columna 1 row 2-->
+          <div class="cols">
+            <label for="nombreMascote">Nombre del dueño</label>
+          </div>
+          <!--columna 2 row 2-->
+          <div class="cols">
+            <input id="nombreDueño" type="text" class="cols-input" />
+          </div>
+        </div>
+        <!-- row3 -->
+        <div class="row rowshight">
+          <!--columna 1 row 3-->
+          <div class="cols"><label for="cedula">Cedula</label></div>
+          <!--columna 3 row 3-->
+          <div class="cols">
+            <input id="cedula" type="text" class="cols-input" />
+          </div>
+        </div>
+        <!-- row4 -->
+        <div class="row rowshight">
+          <!--columna 1 row 4-->
+          <div class="cols"><label for="direccion">Direccion</label></div>
+          <!--columna 2 row 4-->
+          <div class="cols">
+            <input id="direccion" type="text" class="cols-input" />
+          </div>
+        </div>
+        <!-- row5 -->
+        <div class="row">
+          <!--columna 1 row 5-->
+          <div class="cols">
+            <label for="observaciones">Observaciones</label>
+          </div>
+          <!--columna 2 row 5-->
+          <div class="cols">
+            <textarea id="observaciones" rows="3" class="cols-input"></textarea>
+          </div>
+        </div>
+        <!-- row6 -->
+        <div class="row">
+          <!--columna 1 row 6-->
+
+          <table id="tablePadecimientos">
+            <thead>
+              <tr>
+                <th>Padecimientos</th>
+                <th>Borrar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Hepatitis canina</td>
+                <td><button type="button">X</button></td>
+              </tr>
+              <tr>
+                <td>Brucelosis</td>
+                <td><button type="button">X</button></td>
+              </tr>
+              <tr>
+                <td>Sarna</td>
+                <td><button type="button">X</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- row7 -->
+        <div class="row rowshight">
+          <!--columna 1 row 7 -->
+          <div class="cols"><label>Nuevo padecimiento</label></div>
+          <!--columna 2 row 7 -->
+          <div class="cols">
+            <select id="padecimientos" class="cols-input">
+              <option value="0">Select</option>
+              <option value="1">Rabia</option>
+              <option value="2">Azucar</option>
+              <option value="3">Seguera</option>
+            </select>
+          </div>
+        </div>
+        <div class="row rowshight">
+          <div class="cols">
+            <button type="submit" id="buttonCrear" class="buts">Crear</button>
+          </div>
+          <div class="cols">
+            <button type="button" id="buttonActualizar" class="buts">
+              Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- ####################################################################################################################################################################################################### -->
+    <hr style="margin: 2%" />
+    <!-- ####################################################################################################################################################################################################### -->
+    <h3>Historial</h3>
+    <div id="divcontainertable">
+      <table id="tableRecord">
+        <thead>
+          <tr>
+            <th>Nombre de mascota</th>
+            <th>Nombre del dueno</th>
+            <th>cedula</th>
+            <th>Direccion</th>
+            <th>Observaciones</th>
+            <th>Borrar</th>
+            <th>Actualizar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Santi</td>
+            <td>Jose Alvarado</td>
+            <td>1234567</td>
+            <td>heredia barva</td>
+            <td>Tiene pulgas</td>
+            <td><button type="button">Borrar</button></td>
+            <td><button type="button">Actualizar</button></td>
+          </tr>
+          <tr>
+            <td>Campana</td>
+            <td>Freddy Alvarado</td>
+            <td>987456</td>
+            <td>San Jose tibas</td>
+            <td>sobre peso</td>
+            <td><button type="button">Borrar</button></td>
+            <td><button type="button">Actualizar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
