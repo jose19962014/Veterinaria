@@ -16,7 +16,8 @@ form{
     /* border: 2px solid red; */
     width: 35%;
     background-color: rgb(204, 235, 199);
-    height: 650px;
+    height: 710px;
+    border-radius: 15px;
 }
 
 .row{

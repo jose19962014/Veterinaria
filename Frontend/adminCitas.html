@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/adminCitas.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asap&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h3 style="margin-top: 2%">Formulario</h3>
+    <!-- div de cuestionario -->
+    <div id="divformconatiner">
+      <form>
+        <!-- row1 -->
+        <div class="row rowshight" style="margin-top: 1%">
+          <!--columna 1 row 1-->
+          <div class="cols">
+            <label for="formNombreMascota">Nombre de la mascota</label>
+          </div>
+          <!--columna 2 row 1-->
+          <div class="cols">
+            <input id="formNombreMascota" type="text" class="cols-input" />
+          </div>
+        </div>
+        <!-- row2 -->
+        <div class="row rowshight">
+          <!--columna 1 row 2-->
+          <div class="cols">
+            <label for="formNombreDueño">Nombre del dueño</label>
+          </div>
+          <!--columna 2 row 2-->
+          <div class="cols">
+            <input id="formNombreDueño" type="text" class="cols-input" />
+          </div>
+        </div>
+        <!-- row3 -->
+        <div class="row rowshight">
+          <!--columna 1 row 3-->
+          <div class="cols"><label for="formCedula">Cedula</label></div>
+          <!--columna 3 row 3-->
+          <div class="cols">
+            <input id="formCedula" type="text" class="cols-input" />
+          </div>
+        </div>
+        <!-- row4 -->
+        <div class="row rowshight">
+          <!--columna 1 row 4-->
+          <div class="cols"><label for="formDireccion">Direccion</label></div>
+          <!--columna 2 row 4-->
+          <div class="cols">
+            <input id="formDireccion" type="text" class="cols-input" />
+          </div>
+        </div>
+        <!-- row5 -->
+        <div class="row rowshight">
+          <!--columna 1 row 5-->
+          <div class="cols">
+            <label for="formDoctor">Doctor</label>
+          </div>
+          <!--columna 2 row 5-->
+          <div class="cols rowshight">
+            <select id="formDoctor" class="cols-input">
+              <option value="0">Select</option>
+              <option value="1">Sergio</option>
+              <option value="2">Fabian</option>
+              <option value="3">Vero</option>
+            </select>
+          </div>
+        </div>
+        <!-- row6 -->
+        <div class="row rowshight">
+          <!--columna 1 row 6-->
+          <div class="cols">
+            <label for="formFechaIngreso">Fecha de cita</label>
+          </div>
+          <!--columna 2 row 6-->
+          <div class="cols rowshight">
+            <input
+              id="formFechaIngreso"
+              type="datetime-local"
+              class="cols-input"
+            />
+          </div>
+        </div>
+
+        <div class="row rowshight">
+          <div class="cols">
+            <button type="button" id="butFormCancel" class="buts">
+              Cancel
+            </button>
+          </div>
+          <div class="cols">
+            <button type="button" id="butFormCrear" class="buts">Crear</button>
+          </div>
+          <div class="cols">
+            <button type="button" id="butFormActualizar" class="buts">
+              Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- ####################################################################################################################################################################################################### -->
+    <hr style="margin: 2%" />
+    <!-- ####################################################################################################################################################################################################### -->
+    <h3>Historial</h3>
+    <div id="divcontainertable">
+      <table id="tableRecord">
+        <thead>
+          <tr>
+            <th>Nombre de mascota</th>
+            <th>Nombre del dueno</th>
+            <th>cedula</th>
+            <th>Direccion</th>
+            <th>Fecha de entrada</th>
+            <th>Fecha de salida</th>
+            <th>Cancelar</th>
+            <th>Actualizar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Santi</td>
+            <td>Jose Alvarado</td>
+            <td>1234567</td>
+            <td>San Jose tibas</td>
+            <td>8/16/2022 6:00:00pm</td>
+            <td>8/18/2022 11:00:00am</td>
+            <td><button type="button">Borrar</button></td>
+            <td>
+              <a href="#divformconatiner" type="button" id="butTableActualizar"
+                >Actualizar</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>Campana</td>
+            <td>Freddy Alvarado</td>
+            <td>987456</td>
+            <td>San Jose tibas</td>
+            <td>9/20/2022 6:00:00pm</td>
+            <td>9/29/2022 11:00:00am</td>
+            <td>
+              <button type="button" id="butTableBorrar">Borrar</button>
+            </td>
+            <td>
+              <a href="#divformconatiner" type="button" id="butTableActualizar"
+                >Actualizar</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

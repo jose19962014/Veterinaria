@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/clienteExpediente.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asap&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h3 style="margin-top: 2%">Formulario</h3>
+
+    <!-- div de cuestionario -->
+    <div id="divformconatiner">
+      <!-- div imagen  -->
+      <div id="divimagen"></div>
+
+      <!-- start form -->
+      <form>
+        <!-- row1 -->
+        <div class="row rowshight" style="margin-top: 1%">
+          <!--columna 1 row 1-->
+          <div class="cols">
+            <label for="formNombreMascota">Nombre de la mascota</label>
+          </div>
+          <!--columna 2 row 1-->
+          <div class="cols">
+            <input
+              id="formNombreMascota"
+              type="text"
+              class="cols-input"
+              readonly
+            />
+          </div>
+        </div>
+        <!-- row2 -->
+        <div class="row rowshight">
+          <!--columna 1 row 2-->
+          <div class="cols">
+            <label for="formNombreDueño">Nombre del dueño</label>
+          </div>
+          <!--columna 2 row 2-->
+          <div class="cols">
+            <input
+              id="formNombreDueño"
+              type="text"
+              class="cols-input"
+              readonly
+            />
+          </div>
+        </div>
+        <!-- row3 -->
+        <div class="row rowshight">
+          <!--columna 1 row 3-->
+          <div class="cols"><label for="formCedula">Cedula</label></div>
+          <!--columna 3 row 3-->
+          <div class="cols">
+            <input id="formCedula" type="text" class="cols-input" readonly />
+          </div>
+        </div>
+        <!-- row4 -->
+        <div class="row rowshight">
+          <!--columna 1 row 4-->
+          <div class="cols"><label for="formDireccion">Direccion</label></div>
+          <!--columna 2 row 4-->
+          <div class="cols">
+            <input id="formDireccion" type="text" class="cols-input" readonly />
+          </div>
+        </div>
+        <!-- row5 -->
+        <div class="row">
+          <!--columna 1 row 5-->
+          <div class="cols">
+            <label for="formObservaciones">Observaciones</label>
+          </div>
+          <!--columna 2 row 5-->
+          <div class="cols rowshight">
+            <textarea
+              id="formObservaciones"
+              rows="4"
+              class="cols-input"
+              readonly
+            >
+            </textarea>
+          </div>
+        </div>
+        <!-- row6 -->
+        <div class="row">
+          <!--columna 1 row 6-->
+
+          <table id="tablePadecimientos">
+            <thead>
+              <tr>
+                <th>Padecimientos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Hepatitis canina</td>
+              </tr>
+              <tr>
+                <td>Brucelosis</td>
+              </tr>
+              <tr>
+                <td>Sarna</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </form>
+    </div>
+    <!-- ####################################################################################################################################################################################################### -->
+    <hr style="margin: 2%" />
+    <!-- ####################################################################################################################################################################################################### -->
+    <h3>Historial</h3>
+    <div id="divcontainertable">
+      <table id="tableRecord">
+        <thead>
+          <tr>
+            <th>Dia de la cita</th>
+            <th>Observaciones</th>
+            <th>Calificacion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>7/14/2020 11:00:00Am</td>
+            <td>Sobre peso</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>01/02/2022 03:00:00PM</td>
+            <td>Uñas largas</td>
+            <td>3</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+  <script src="/js/clienteExpedienteController.js"></script>
+</html>

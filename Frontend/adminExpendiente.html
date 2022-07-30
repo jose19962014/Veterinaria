@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="/css/AdminExpediente.css" />
+    <link rel="stylesheet" href="/css/adminExpediente.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,54 +21,58 @@
     <div id="divformconatiner">
       <form>
         <!-- row1 -->
-        <div class="row rowshight">
+        <div class="row rowshight" style="margin-top: 1%">
           <!--columna 1 row 1-->
           <div class="cols">
-            <label for="nombreMascote">Nombre de la mascota</label>
+            <label for="formNombreMascota">Nombre de la mascota</label>
           </div>
           <!--columna 2 row 1-->
           <div class="cols">
-            <input id="nombreMascote" type="text" class="cols-input" />
+            <input id="formNombreMascota" type="text" class="cols-input" />
           </div>
         </div>
         <!-- row2 -->
         <div class="row rowshight">
           <!--columna 1 row 2-->
           <div class="cols">
-            <label for="nombreMascote">Nombre del dueño</label>
+            <label for="formNombreDueño">Nombre del dueño</label>
           </div>
           <!--columna 2 row 2-->
           <div class="cols">
-            <input id="nombreDueño" type="text" class="cols-input" />
+            <input id="formNombreDueño" type="text" class="cols-input" />
           </div>
         </div>
         <!-- row3 -->
         <div class="row rowshight">
           <!--columna 1 row 3-->
-          <div class="cols"><label for="cedula">Cedula</label></div>
+          <div class="cols"><label for="formCedula">Cedula</label></div>
           <!--columna 3 row 3-->
           <div class="cols">
-            <input id="cedula" type="text" class="cols-input" />
+            <input id="formCedula" type="text" class="cols-input" />
           </div>
         </div>
         <!-- row4 -->
         <div class="row rowshight">
           <!--columna 1 row 4-->
-          <div class="cols"><label for="direccion">Direccion</label></div>
+          <div class="cols"><label for="formDireccion">Direccion</label></div>
           <!--columna 2 row 4-->
           <div class="cols">
-            <input id="direccion" type="text" class="cols-input" />
+            <input id="formDireccion" type="text" class="cols-input" />
           </div>
         </div>
         <!-- row5 -->
         <div class="row">
           <!--columna 1 row 5-->
           <div class="cols">
-            <label for="observaciones">Observaciones</label>
+            <label for="formObservaciones">Observaciones</label>
           </div>
           <!--columna 2 row 5-->
-          <div class="cols">
-            <textarea id="observaciones" rows="3" class="cols-input"></textarea>
+          <div class="cols rowshight">
+            <textarea
+              id="formObservaciones"
+              rows="4"
+              class="cols-input"
+            ></textarea>
           </div>
         </div>
         <!-- row6 -->
@@ -102,10 +106,12 @@
         <!-- row7 -->
         <div class="row rowshight">
           <!--columna 1 row 7 -->
-          <div class="cols"><label>Nuevo padecimiento</label></div>
+          <div class="cols">
+            <label for="formPadecimientos">Nuevo padecimiento</label>
+          </div>
           <!--columna 2 row 7 -->
           <div class="cols">
-            <select id="padecimientos" class="cols-input">
+            <select id="formPadecimientos" class="cols-input">
               <option value="0">Select</option>
               <option value="1">Rabia</option>
               <option value="2">Azucar</option>
@@ -115,10 +121,15 @@
         </div>
         <div class="row rowshight">
           <div class="cols">
-            <button type="submit" id="buttonCrear" class="buts">Crear</button>
+            <button type="button" id="butFormCancel" class="buts">
+              Cancel
+            </button>
           </div>
           <div class="cols">
-            <button type="button" id="buttonActualizar" class="buts">
+            <button type="button" id="butFormCrear" class="buts">Crear</button>
+          </div>
+          <div class="cols">
+            <button type="button" id="butFormActualizar" class="buts">
               Actualizar
             </button>
           </div>
@@ -150,7 +161,11 @@
             <td>heredia barva</td>
             <td>Tiene pulgas</td>
             <td><button type="button">Borrar</button></td>
-            <td><button type="button">Actualizar</button></td>
+            <td>
+              <a href="#divformconatiner" type="button" id="butTableActualizar"
+                >Actualizar</a
+              >
+            </td>
           </tr>
           <tr>
             <td>Campana</td>
@@ -158,11 +173,20 @@
             <td>987456</td>
             <td>San Jose tibas</td>
             <td>sobre peso</td>
-            <td><button type="button">Borrar</button></td>
-            <td><button type="button">Actualizar</button></td>
+            <td>
+              <button type="button" id="butTableBorrar">Borrar</button>
+            </td>
+            <td>
+              <a href="#divformconatiner" type="button" id="butTableActualizar"
+                >Actualizar</a
+              >
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
   </body>
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/adminExpendienteController.js"></script>
 </html>
