@@ -28,7 +28,12 @@
           </div>
           <!--columna 2 row 1-->
           <div class="cols">
-            <input id="formNombreMascota" type="text" class="cols-input" />
+            <input
+              id="formNombreMascota"
+              type="text"
+              class="cols-input"
+              onchange="validacionNombreMascota()"
+            />
           </div>
         </div>
         <!-- row2 -->
@@ -39,7 +44,12 @@
           </div>
           <!--columna 2 row 2-->
           <div class="cols">
-            <input id="formNombreDueño" type="text" class="cols-input" />
+            <input
+              id="formNombreDueño"
+              type="text"
+              class="cols-input"
+              onchange="validacionNombreDueno()"
+            />
           </div>
         </div>
         <!-- row3 -->
@@ -48,7 +58,12 @@
           <div class="cols"><label for="formCedula">Cedula</label></div>
           <!--columna 3 row 3-->
           <div class="cols">
-            <input id="formCedula" type="text" class="cols-input" />
+            <input
+              id="formCedula"
+              type="text"
+              class="cols-input"
+              onchange="validacionCedula()"
+            />
           </div>
         </div>
         <!-- row4 -->
@@ -57,7 +72,12 @@
           <div class="cols"><label for="formDireccion">Direccion</label></div>
           <!--columna 2 row 4-->
           <div class="cols">
-            <input id="formDireccion" type="text" class="cols-input" />
+            <input
+              id="formDireccion"
+              type="text"
+              class="cols-input"
+              onchange="validacionDireccion()"
+            />
           </div>
         </div>
         <!-- row5 -->
@@ -68,7 +88,11 @@
           </div>
           <!--columna 2 row 5-->
           <div class="cols rowshight">
-            <select id="formDoctor" class="cols-input">
+            <select
+              id="formDoctor"
+              class="cols-input"
+              onchange="validacionDoctor()"
+            >
               <option value="0">Select</option>
               <option value="1">Sergio</option>
               <option value="2">Fabian</option>
@@ -86,8 +110,9 @@
           <div class="cols rowshight">
             <input
               id="formFechaIngreso"
-              type="datetime-local"
+              type="date"
               class="cols-input"
+              onchange="validacionFechaEntrada()"
             />
           </div>
         </div>
@@ -102,8 +127,9 @@
           <div class="cols">
             <input
               id="formFechaSalida"
-              type="datetime-local"
+              type="date"
               class="cols-input"
+              onchange="validacionFechaSalida()"
             />
           </div>
         </div>
@@ -177,4 +203,6 @@
       </table>
     </div>
   </body>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/js/adminReservacionesController.js"></script>
 </html>

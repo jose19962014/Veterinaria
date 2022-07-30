@@ -57,6 +57,15 @@ form {
     font-size: 80%;
 }
 
+input{
+    border-color: #ddd;
+}
+
+
+select{
+    border-color: #ddd;
+}
+
 #tablePadecimientos {
     width: 50%;
     text-align: center;

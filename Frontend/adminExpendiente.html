@@ -28,7 +28,12 @@
           </div>
           <!--columna 2 row 1-->
           <div class="cols">
-            <input id="formNombreMascota" type="text" class="cols-input" />
+            <input
+              id="formNombreMascota"
+              type="text"
+              class="cols-input"
+              onchange="validacionNombreMascota()"
+            />
           </div>
         </div>
         <!-- row2 -->
@@ -39,7 +44,12 @@
           </div>
           <!--columna 2 row 2-->
           <div class="cols">
-            <input id="formNombreDueño" type="text" class="cols-input" />
+            <input
+              id="formNombreDueño"
+              type="text"
+              class="cols-input"
+              onchange="validacionNombreDueno()"
+            />
           </div>
         </div>
         <!-- row3 -->
@@ -48,7 +58,12 @@
           <div class="cols"><label for="formCedula">Cedula</label></div>
           <!--columna 3 row 3-->
           <div class="cols">
-            <input id="formCedula" type="text" class="cols-input" />
+            <input
+              id="formCedula"
+              type="text"
+              class="cols-input"
+              onchange="validacionCedula()"
+            />
           </div>
         </div>
         <!-- row4 -->
@@ -57,7 +72,12 @@
           <div class="cols"><label for="formDireccion">Direccion</label></div>
           <!--columna 2 row 4-->
           <div class="cols">
-            <input id="formDireccion" type="text" class="cols-input" />
+            <input
+              id="formDireccion"
+              type="text"
+              class="cols-input"
+              onchange="validacionDireccion()"
+            />
           </div>
         </div>
         <!-- row5 -->
@@ -72,6 +92,7 @@
               id="formObservaciones"
               rows="4"
               class="cols-input"
+              onchange="validacionObservacion()"
             ></textarea>
           </div>
         </div>

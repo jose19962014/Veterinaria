@@ -1,19 +1,18 @@
-
-let formObservaciones = document.querySelector('#formObservaciones');
-let formDireccion = document.querySelector('#formDireccion');
-let formCedula = document.querySelector('#formCedula');
-let formNombreDueño = document.querySelector('#formNombreDueño');
+// inputs
 let formNombreMascota = document.querySelector('#formNombreMascota');
-let formPadecimientos = document.querySelector('#formPadecimientos');
-
+let formNombreDueño = document.querySelector('#formNombreDueño');
+let formCedula = document.querySelector('#formCedula');
+let formDireccion = document.querySelector('#formDireccion');
+let formDoctor = document.querySelector('#formDoctor');
+let formFechaIngreso = document.querySelector('#formFechaIngreso');
+//botones
 let butformActualizar = document.querySelector('#butFormActualizar');
 let butFormCrear = document.querySelector('#butFormCrear');
 let butFormCancel = document.querySelector('#butFormCancel');
-
+//tabla
 let tableRecord =  document.querySelector('#tableRecord');
 let butTableActualizar = document.querySelector('#butTableActualizar');
 let butTableBorrar = document.querySelector('#butTableBorrar');
-
 
 
 
@@ -29,7 +28,6 @@ function alerttexto(texto){
 
 
 function  validationJustTextNum(texto){
-    // const pattern = new RegExp('([A-Za-z,0-9]{4,254})\w+');
     const pattern = new RegExp('^[A-Z0-9]+$', 'i');
     
     return  pattern.test(texto);
@@ -40,20 +38,23 @@ function  validationJustNum(numero){
     return  pattern.test(numero);
 }
 
+
 function limpiarForm(){
     formNombreMascota.value = '';
     formNombreDueño.value = '';
     formCedula.value = '';
-    formObservaciones.value = '';
     formDireccion.value = '';
-    formPadecimientos.value = 0; 
+    formDoctor.value = 0;
+    formFechaIngreso.value = "";
+  
   
     formNombreMascota.style.borderColor = 'white';
     formNombreDueño.style.borderColor = 'white';
     formCedula.style.borderColor = 'white';
-    formObservaciones.style.borderColor = 'white';
     formDireccion.style.borderColor = 'white';
-    formPadecimientos.style.borderColor = 'white';
+    formDoctor.style.borderColor = 'white';
+    formFechaIngreso.style.borderColor = 'white';
+
 
     butFormCrear.disabled = false;
 }
@@ -110,32 +111,43 @@ if(!validationJustTextNum(textformDireccion)){
     }
 }
 
-function validacionObservacion(){
-   let textformObservaciones =  formObservaciones.value;
-    if(!validationJustTextNum(textformObservaciones)){
-        alerttexto('La observacion solo admite numeros y texto y no puede estar vacio')
-        formObservaciones.style.borderColor = 'red';
+function validacionDoctor(){
+  let textformDoctor = formDoctor.value;
+  if(textformDoctor == "0"){
+        alerttexto('El campo doctor es obligatorio')
+        formDoctor.style.borderColor = 'red';
         return;
-    }    
- 
+  }
+  else{
+    formDoctor.style.borderColor = 'palegreen';
+  }
+}
+
+
+function validacionFechaEntrada(){
+    let textformFechaIngreso = formFechaIngreso.value; 
+
+
+    if(textformFechaIngreso != "" && textformFechaIngreso != null)
+    {
+
+        formFechaIngreso.style.borderColor = 'palegreen';
+        
+    }
     else{
-        formObservaciones.style.borderColor = 'palegreen';
+        alerttexto('La fecha de salida es obligatoria')
+        formFechaIngreso.style.borderColor = 'red';
+        return;        
     }
 }
 
 function validacionDeData (){
-
-
     validacionNombreMascota();
     validacionNombreDueno();
     validacionCedula();
     validacionDireccion();
-    validacionObservacion();
-    
-
-
- 
-        
+    validacionFechaEntrada();
+    validacionDoctor();
 }
 
 
@@ -145,15 +157,16 @@ function getExpedineteById(index){
 }
 
 
+
 //botones del form
 butFormCancel.addEventListener('click',function(){
-    limpiarForm();
+
+    limpiarForm();  
 })
 
 butFormCrear.addEventListener("click",function(){
     validacionDeData();
 })
-
 
 butformActualizar.addEventListener("click",function(){
     validacionDeData();
@@ -162,6 +175,8 @@ butformActualizar.addEventListener("click",function(){
 // botones de la tabla
 
 butTableActualizar.addEventListener('click',getExpedineteById)
+
+
 
 
 
