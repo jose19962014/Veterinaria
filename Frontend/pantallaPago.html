@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/navbar.css" />
+</head>
+<body>
+
+<!-- ######## secciondel snavbar ####################################################################################################################################################################################################### -->
+    <header class="header-principal">
+
+        <div class="logo">
+            <img src="/imagenes/vet.jpg" alt="">
+        </div>
+        <div class= "boton">
+            <button id="btn-1" type="button">Sign In</button>
+
+        </div>
+
+        </div>
+    </header>
+      <section class="navegar">
+        <div class="menu_bar">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#"><span class="icon-house"></span>Inicio</a></li>
+                
+                <li class="submenu">
+                    <a href="#"><span class="icon-rocket"></span>Veterinaria<span class="caret icon-arrow-down6"></span></a>
+                    <ul class="children">
+                        <li><a href="#">Mi mascota <span class="icon-dot"></span></a></li>
+                        <li><a href="#">Expediente <span class="icon-dot"></span></a></li>
+                    </ul>
+                </li>
+                
+                <li class="submenu">
+                    <a href="/hotel.html"><span class="icon-rocket"></span>Hotel<span class="caret icon-arrow-down6"></span></a>
+                    <ul class="children">
+                        <li><a href="/reservacion.html">Reservaciones <span class="icon-dot"></span></a></li>
+                        
+
+                    </ul>
+                </li>
+                <li><a href="#"><span class="icon-earth"></span>contacto</a></li>
+                
+                <li class="submenu">
+                    <a href="#"><span class="icon-rocket"></span>admin<span class="caret icon-arrow-down6"></span></a>
+                    <ul class="children">
+                        <li><a href="#">Modificar usuarios <span class="icon-dot"></span></a></li>
+                        <li><a href="#">Modificar mascotas <span class="icon-dot"></span></a></li>
+                        <li><a href="#">Modificar padecimientos <span class="icon-dot"></span></a></li>
+                        <li><a href="/clienteExpediente.html">Modificar expediente <span class="icon-dot"></span></a></li>
+                        <li><a href="/adminCitas.html">Modificar citas <span class="icon-dot"></span></a></li>
+                        <li><a href="/adminReservaciones.html">Modificar reservaciones <span class="icon-dot"></span></a></li>
+                        <li><a href="#">Hotel <span class="icon-dot"></span></a></li>
+                        <li><a href="#">Hacer reservaciones <span class="icon-dot"></span></a></li>
+                        <li><a href="#">Ver ocupación <span class="icon-dot"></span></a></li>
+                    </ul>
+                </li>
+                
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </section>
+
+
+   <!-- ######## seccion de formulario ###############################################################################################################################################################################################  -->
+
+<h3 style="margin-top: 2%">Formulario</h3>
+    <!-- div de cuestionario -->
+    <div id="divformconatiner">
+      <form>
+        <!-- row1 -->
+        <div class="row rowshight" style="margin-top: 1%">
+          <!--columna 1 row 1-->
+          <div class="cols">
+            <label for="formNumeroTarjeta">Numero de tarjeta</label>
+          </div>
+          <!--columna 2 row 1-->
+          <div class="cols">
+            <input
+              id="formNumeroTarjeta"
+              type="text"
+              class="cols-input"
+              onchange=""
+            />
+          </div>
+        </div>
+        <!-- row2 -->
+        <div class="row rowshight">
+          <!--columna 1 row 2-->
+          <div class="cols">
+            <label for="formFechaVencimiento">Fecha de vencimiento</label>
+          </div>
+          <!--columna 2 row 2-->
+          <div class="cols">
+            <input
+              id="formFechaVencimiento"
+              type="text"
+              class="cols-input"
+              onchange=""
+            />
+          </div>
+        </div>
+        <!-- row3 -->
+        <div class="row rowshight">
+          <!--columna 1 row 3-->
+          <div class="cols"><label for="formCvv">Cvv</label></div>
+          <!--columna 3 row 3-->
+          <div class="cols">
+            <input
+              id="formCvv"
+              type="text"
+              class="cols-input"
+              onchange=""
+            />
+          </div>
+        </div>
+        <!-- row4 -->
+        <div class="row rowshight">
+          <!--columna 1 row 4-->
+          <div class="cols"><label for="formNombre">Nombre</label></div>
+          <!--columna 2 row 4-->
+          <div class="cols">
+            <input
+              id="formNombre"
+              type="text"
+              class="cols-input"
+              onchange=""
+            />
+          </div>
+        </div>
+                <!-- row4 -->
+        <div class="row rowshight">
+          <!--columna 1 row 4-->
+          <div class="cols"><label for="formApellido">Apellido</label></div>
+          <!--columna 2 row 4-->
+          <div class="cols">
+            <input
+              id="formApellido"
+              type="text"
+              class="cols-input"
+              onchange=""
+            />
+          </div>
+        </div>
+        
+        <div class="row rowshight">
+          <div class="cols">
+            <button type="button" id="butFormCancel" class="buts">
+              Cancel
+            </button>
+          </div>
+          <div class="cols">
+            <button type="button" id="butFormCrear" class="buts">Crear</button>
+          </div>
+          <div class="cols">
+            <button type="button" id="butFormActualizar" class="buts">
+              Actualizar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+</body>
+</html>
