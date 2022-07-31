@@ -169,6 +169,7 @@ butFormCrear.addEventListener("click",function(){
 })
 
 butformActualizar.addEventListener("click",function(){
+    limpiarForm();
     validacionDeData();
 })
 
