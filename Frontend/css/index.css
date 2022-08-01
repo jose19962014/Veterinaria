@@ -1,0 +1,181 @@
+* {
+    padding:0;
+    margin:0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+}
+
+
+footer{
+    background: #61b6e4;
+    display: flex;
+    justify-content:center;
+    min-height: 50px;
+    padding: 0%;
+    align-items: center;
+    width: 100%;
+    font-size: 10px;
+}
+
+
+
+
+.sct-banner {
+    background-image: url("/imagenes/animal.jpg");
+    background-size: cover;
+    display: flex;
+    min-height: 700px;
+    /*min-height: calc(90vh - 5px);*/
+    padding: 3%;
+    align-items: center;
+}
+
+
+h1{
+    color: rgb(7, 43, 65);
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+#sct-formulario{
+    flex-direction: column;
+    padding: 75px;
+    font-size: 25px;
+    display: flex;
+
+}
+label{
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px 0px 15px 50px;
+    height: 26px;
+}
+input, select{
+    width: 80%;
+    height: 26px;
+    margin: 0px 0px 15px 30px;
+    border: none;
+    border-radius: 5px;
+}
+#btn-registrar{
+    background: #a6e1f4;
+    border: 2px solid #4ca3bd;
+    color: rgb(5, 61, 59);
+    cursor: pointer;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 2px;
+    font-size: 20px;
+    display: block;
+}
+
+#btn-registrar:hover {
+    background-color: #174944;
+}
+#btn-1{
+    background:  none;
+    border: 2px solid #81c5ec;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 2px;
+    font-size: 17px;
+}
+#btn-1:hover {
+    background-color: #1658c3;
+}
+
+#sct-reviews {
+    padding: 1px;
+}
+
+#sct-reviews h3 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+h3{
+    color: rgb(15, 85, 129);
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+h2{
+    color: rgb(7, 43, 65);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+p {
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+h2{
+    text-decoration: underline;
+    text-align: center;
+}
+#sct-formulario{
+    width: 500px;
+    height: 700px;
+    display:flex;
+    flex-direction: column;
+    border: #80dad1;
+}
+input, select{
+    width: 40%;
+    height: 26px;
+    margin: 0px 0px 15px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7cbdd7;
+}
+#btn-enviar{
+    width: 120px;
+    height: 50px;
+    font-size: 14px;
+    margin: 20px auto;
+    bottom: 50px;
+    left: 160px;
+    background-color: #97d0ce;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+#btn-enviar:hover {
+    background-color: #12a2a4;
+}
+
+.columna {
+    width: 100%;
+    padding: 100px;
+    border: #80dad1;
+    flex: auto;
+  }
+  
+  .fila::after {
+    content: "";
+    clear: both;
+    display: table;
+    align-content: center;
+  }
+
