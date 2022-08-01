@@ -1,0 +1,65 @@
+*{
+  font-family: 'Asap', sans-serif; 
+}
+
+body{
+  background-color: rgb(75, 179, 210);
+}
+
+.encabezado{
+ /* border: 2px solid black;*/
+  width: 1000px;
+  background-color: rgb(204, 235, 199);
+  margin-left: 500px;
+}
+
+#logo{
+  /*border: 2px solid blue;*/
+  display: flex;
+  justify-content: center;
+  padding-top: 1%;
+}
+
+#nombreEmpresa{
+  display: flex;
+  justify-content: center;
+}
+
+#compannia{
+  font-size: 20px;
+  position: relative;
+  top:10px ;
+  left:700px;
+
+  /*border: 2px solid blue;*/
+  
+}
+
+#cliente{
+  font-size: 20px;
+  /*border: 2px solid green;*/
+  position: relative;
+  bottom: 80px;
+
+}
+.tablaProductos{
+  /*border: 2px solid black;*/
+  width: 1000px;
+  background-color: rgb(204, 235, 199);
+  margin-left: 500px;
+  padding-top: 1%;
+  font-size: 20px;
+  
+}
+
+#botonImprimir{
+  
+  width: 1000px;
+  background-color: rgb(204, 235, 199);
+  margin-left: 500px;
+  padding-top: 1%;
+  display: flex;
+  justify-content: center;
+
+}
+

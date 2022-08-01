@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Factura</title>
+  <link rel="stylesheet" href="/css/factura.css">
+</head>
+<body id="Contenedor">
+  <header class="encabezado">
+    <div id="logo">
+      <img src="/imagenes/vet.jpg" width="100px">
+    </div>
+    <hr>
+    <div id="nombreEmpresa">
+      <h1>Veterinaria Moka</h1>
+    </div>
+    <div id="compannia">
+      <div>Veterinaria Moka</div>
+      <div>Direccion veterinaria</div>
+      <div>(506) 8825-4476</div>
+      <div>
+        <a href="mailto:veterinariamoka@example.com">veterinariamoka@example.com</a>
+      </div>
+    </div>
+    <div id="cliente">
+      <div>
+        <span>Cliente: </span>
+        Sergio Fernandez
+      </div>
+      <div>
+        <span>Direccion</span>
+        San Antonio, Desamparados
+      </div>
+      <div>
+        <span>Fecha</span>
+        01 agosto 2022
+      </div>
+      <div>
+        <span>Correo</span>
+        fmsergio27@gmail.com
+      </div>
+    </div>
+  </header>
+  <main>
+    <table class="tablaProductos">
+      <thead>
+        <tr>
+        <th>Producto o servicio</th>
+        <th>Descripcion</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vacunas</td>
+          <td>Vacuna de los 2 meses</td>
+          <td>¢25.000</td>
+          <td>1</td>
+          <td>¢25.000</td>
+          </tr>
+        <tr>
+          <td>Hospedaje</td>
+          <td>2 dias de hospedaje en el Hotel</td>
+          <td>¢25.000</td>
+          <td>2</td>
+          <td>¢50.000</td>
+        </tr>
+        <tr>
+          <td colspan="4">Total</td>
+          <td class="Total">75.000</td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="botonImprimir">
+      <button type="submit">Imprimir</button>
+    </div>
+  </main>
+  </footer>
+</body>
+</html>
