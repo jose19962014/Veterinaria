@@ -1,0 +1,48 @@
+*{
+    font-family: 'Asap', sans-serif;
+    
+}
+
+body{
+    /* background-color: rgb(75, 179, 210); */
+}
+
+#contenedorTabla{
+    width: 100%;
+    padding-top: 300px;
+}
+
+#mascotas{
+    background-color: rgb(204, 235, 199);
+    border-collapse: collapse;
+    width: 40%;
+    margin: auto;
+}
+
+#mascotas thead{
+background-color: rgb(167, 221, 183);
+}
+
+
+
+#mascotas td,
+#mascotas th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#mascotas tr:nth-child(even) {
+    background-color: rgb(167, 221, 183);
+}
+
+#mascotas tr:hover {
+    background-color: rgb(224, 243, 220);
+}
+
+#mascotas th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: rgb(121, 204, 196);
+    color: white;
+}
