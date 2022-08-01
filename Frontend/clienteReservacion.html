@@ -1,20 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+    <!-- Tipografías de google -->
 
-    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Tipografías de google -->
+
+    <!-- <link rel="stylesheet" href="css/general.css"> -->
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="css/clienteReservacion.css">
+    <title>Reservaciones | Hotel</title>
 </head>
 <body>
-
-<!-- ######## secciondel snavbar ####################################################################################################################################################################################################### -->
     <header class="header-principal">
 
         <div class="logo">
-            <img src="/imagenes/vet.jpg" alt="">
+            <img src="imagenes/vet.jpg" alt="">
         </div>
         <div class= "boton">
             <button id="btn-1" type="button">Sign In</button>
@@ -23,7 +32,8 @@
 
         </div>
     </header>
-      <section class="navegar">
+
+    <section class="navegar">
         <div class="menu_bar">
         </div>
         <nav>
@@ -68,11 +78,8 @@
             </ul>
         </nav>
     </section>
-
-
-   <!-- ######## seccion de formulario ###############################################################################################################################################################################################  -->
-
-<h3 style="margin-top: 2%">Formulario</h3>
+    <section>
+        <h3 style="margin-top: 2%">Ingrese los datos de la reservación</h3>
     <!-- div de cuestionario -->
     <div id="divformconatiner">
       <form>
@@ -80,15 +87,15 @@
         <div class="row rowshight" style="margin-top: 1%">
           <!--columna 1 row 1-->
           <div class="cols">
-            <label for="formNumeroTarjeta">Numero de tarjeta</label>
+            <label for="formNombreMascota">Nombre de la mascota</label>
           </div>
           <!--columna 2 row 1-->
           <div class="cols">
             <input
-              id="formNumeroTarjeta"
+              id="formNombreMascota"
               type="text"
               class="cols-input"
-              onchange=""
+              onchange="validacionNombreMascota()"
             />
           </div>
         </div>
@@ -96,61 +103,67 @@
         <div class="row rowshight">
           <!--columna 1 row 2-->
           <div class="cols">
-            <label for="formFechaVencimiento">Fecha de vencimiento</label>
+            <label for="formNombreDueño">Nombre del dueño</label>
           </div>
           <!--columna 2 row 2-->
           <div class="cols">
             <input
-              id="formFechaVencimiento"
+              id="formNombreDueño"
               type="text"
               class="cols-input"
-              onchange=""
+              onchange="validacionNombreDueno()"
             />
           </div>
         </div>
-        <!-- row3 -->
+        <!-- row6 -->
         <div class="row rowshight">
-          <!--columna 1 row 3-->
-          <div class="cols"><label for="formCvv">Cvv</label></div>
-          <!--columna 3 row 3-->
+          <!--columna 1 row 6-->
+          <div class="cols">
+            <label for="formFechaIngreso">Fecha de entrada</label>
+          </div>
+          <!--columna 2 row 6-->
+          <div class="cols rowshight">
+            <input
+              id="formFechaIngreso"
+              type="date"
+              class="cols-input"
+              onchange="validacionFechaEntrada()"
+            />
+          </div>
+        </div>
+
+        <!-- row7 -->
+        <div class="row rowshight">
+          <!--columna 1 row 7 -->
+          <div class="cols">
+            <label for="formFechaSalida">Fecha de salida</label>
+          </div>
+          <!--columna 2 row 7 -->
           <div class="cols">
             <input
-              id="formCvv"
-              type="text"
+              id="formFechaSalida"
+              type="date"
               class="cols-input"
-              onchange=""
+              onchange="validacionFechaSalida()"
             />
           </div>
         </div>
-        <!-- row4 -->
-        <div class="row rowshight">
-          <!--columna 1 row 4-->
-          <div class="cols"><label for="formNombre">Nombre</label></div>
-          <!--columna 2 row 4-->
-          <div class="cols">
-            <input
-              id="formNombre"
-              type="text"
-              class="cols-input"
-              onchange=""
-            />
+        <!-- row5 -->
+        <div class="row">
+            <!--columna 1 row 5-->
+            <div class="cols">
+              <label for="formObservaciones">Observaciones</label>
+            </div>
+            <!--columna 2 row 5-->
+            <div class="cols rowshight">
+              <textarea
+                id="formObservaciones"
+                rows="8"
+                class="cols-input"
+                onchange="validacionObservacion()"
+              ></textarea>
+            </div>
           </div>
-        </div>
-                <!-- row4 -->
-        <div class="row rowshight">
-          <!--columna 1 row 4-->
-          <div class="cols"><label for="formApellido">Apellido</label></div>
-          <!--columna 2 row 4-->
-          <div class="cols">
-            <input
-              id="formApellido"
-              type="text"
-              class="cols-input"
-              onchange=""
-            />
-          </div>
-        </div>
-        
         <div class="row rowshight">
           <div class="cols">
             <button type="button" id="butFormCancel" class="buts">
@@ -168,6 +181,16 @@
         </div>
       </form>
     </div>
+    
+  </body>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/reservacion.js"></script>
 
+    </section>
+    <footer>
+
+
+    </footer>
+    
 </body>
 </html>

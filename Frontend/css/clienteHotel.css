@@ -1,0 +1,110 @@
+
+#btn-registrar{
+    background: #1c728b;
+    border: 2px solid #1c728b;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 2px;
+    font-size: 17px;
+    display: block;
+}
+
+
+#btn-1{
+    background:  #60b7e9;
+    border: 2px solid #60b7e9;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 2px;
+    font-size: 17px;
+
+}
+#btn-1:hover {
+    background-color: #1658c3;
+}
+
+#sct-reviews {
+    padding: 1px;
+}
+
+#sct-reviews h3 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+h3{
+    color: rgb(7, 43, 65);
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+
+p {
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Estilos Gabriel */
+
+#infoHotel{
+    /* border: 2px solid red; */
+    text-align: justify;
+    line-height: 35px;
+    padding: 90px;
+ 
+}
+
+
+
+.sct-bannerHotel {
+    background-image: url(/imagenes/portadaHotel.jpg);
+    background-size: cover;
+    display: flex;
+    min-height: 700px;
+    /*min-height: calc(90vh - 5px);*/
+    padding: 3%;
+    align-items: center;
+}
+
+.buttonReser{
+    background: #1c728b;
+    border: 2px solid black;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 2px;
+    font-size: 17px;
+    text-align: right;
+
+    position: relative;
+    
+    bottom: 300px;
+    
+    left: 1500px;
+    
+    
+}
+
+footer{
+    background: #61b6e4;
+    display: flex;
+    justify-content:center;
+    min-height: 50px;
+    padding: 0%;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    font-size: 10px;
+    position: relative;
+    
+}
+

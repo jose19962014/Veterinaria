@@ -1,0 +1,151 @@
+
+/* tablas */
+#divformconatiner {
+    /* border: 2px solid blue ; */
+    display: flex;
+    justify-content: center;
+    
+}
+
+form {
+    /* border: 2px solid red; */
+    width: 35%;
+    background-color: rgb(204, 235, 199);
+    height: 530px;
+    border-radius: 15px;
+}
+
+.row {
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2%;
+    font-size: 120%;
+    background-color: rgb(167, 221, 183);
+    width: 95%;
+    margin-left: 2%;
+    border-radius: 15px;
+
+
+}
+
+.rowshight {
+    height: 10%;
+}
+
+
+.cols {
+    /* border: 2px solid yellow; */
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+
+
+.cols-input {
+    width: 95%;
+    margin: auto;
+    font-size: 80%;
+}
+
+input{
+    border-color: #ddd;
+}
+
+
+select{
+    border-color: #ddd;
+}
+
+#tablePadecimientos {
+    width: 50%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+#tablePadecimientos thead {
+    background-color: lightgray;
+}
+
+.buts {
+    font-size: 100%;
+    border-radius: 5px;
+}
+
+.buts:hover {
+    background-color: lightgray;
+}
+
+
+/* #################################################################################################################################################################################################################### */
+/* parte de la tabla */
+
+
+#divcontainertable {
+    width: 100%;
+}
+
+#tableRecord {
+    background-color: rgb(204, 235, 199);
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+
+#tableRecord thead {
+    background-color: rgb(167, 221, 183);
+}
+
+
+
+#tableRecord td,
+#tableRecord th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#tableRecord tr:nth-child(even) {
+    background-color: rgb(167, 221, 183);
+}
+
+#tableRecord tr:hover {
+    background-color: rgb(224, 243, 220);
+}
+
+#tableRecord th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(121, 204, 196);
+    color: white;
+}
+
+* {
+    padding:0;
+    margin:0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+}
+
+
+footer{
+    background: #61b6e4;
+    display: flex;
+    justify-content:center;
+    min-height: 50px;
+    padding: 0%;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    font-size: 10px;
+    position: relative;
+    
+}
