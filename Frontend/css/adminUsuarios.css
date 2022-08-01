@@ -1,0 +1,77 @@
+* {
+    font-family: 'Asap', sans-serif;
+
+}
+
+body {
+    background-color: rgb(75, 179, 210);
+}
+
+#divformconatiner {
+    /* border: 2px solid blue ; */
+    display: flex;
+    justify-content: center;
+
+}
+
+form {
+    /* border: 2px solid red; */
+    width: 35%;
+    background-color: rgb(204, 235, 199);
+    height: 530px;
+    border-radius: 15px;
+}
+
+.row {
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2%;
+    font-size: 120%;
+    background-color: rgb(167, 221, 183);
+    width: 95%;
+    margin-left: 2%;
+    border-radius: 15px;
+
+
+}
+
+.rowshight {
+    height: 10%;
+}
+
+
+.cols {
+    /* border: 2px solid yellow; */
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+
+
+.cols-input {
+    width: 95%;
+    margin: auto;
+    font-size: 80%;
+}
+
+input {
+    border-color: #ddd;
+}
+
+
+select {
+    border-color: #ddd;
+}
+
+
+.buts {
+    font-size: 100%;
+    border-radius: 5px;
+}
+
+.buts:hover {
+    background-color: lightgray;
+}

@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
+    <link rel="stylesheet" href="/css/adminUsuarios.css" />
     <link rel="stylesheet" href="/css/navbar.css" />
-    <link rel="stylesheet" href="/css/pantallaPago.css" />
-</head>
-<body>
-
-<!-- ######## secciondel snavbar ####################################################################################################################################################################################################### -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asap&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header class="header-principal">
         <div class="logo">
             <img src="imagenes/vet.jpg" alt="">
@@ -31,7 +35,7 @@
                 <li class="submenu">
                     <a href="#"><span>Veterinaria<span ></span></a>
                     <ul class="children">
-                        <li><a href="/clienteMascota.html">Mi mascota </a></li>
+                        <li><a href="#">Mi mascota </a></li>
                     </ul>
                 </li>
                 
@@ -48,7 +52,7 @@
                 <li class="submenu">
                     <a href="#"> admin</a>
                     <ul class="children">
-                        <li><a href="#">Modificar usuarios </a></li>
+                        <li><a href="/adminUsuarios.html">Modificar usuarios </a></li>
                         <li><a href="/adminModificarMascotas.html">Modificar mascotas </a></li>
                         <li><a href="/adminPadecimientos.html">Modificar padecimientos </a></li>
                         <li><a href="/adminExpendiente.html">Modificar expediente </a></li>
@@ -64,109 +68,131 @@
     </section>
 
 
-   <!-- ######## seccion de formulario ###############################################################################################################################################################################################  -->
-
-<h3 style="margin-top: 2%">Formulario</h3>
-    <!-- div de cuestionario -->
+    <h3 style="margin-top: 2%">Formulario</h3>
+    
     <div id="divformconatiner">
       <form>
-        <!-- row1 -->
-        <div class="row rowshight" style="margin-top: 6%">
-          <!--columna 1 row 1-->
+
+        <div class="row rowshight">
+          
           <div class="cols">
-            <label for="formNumeroTarjeta">Numero de tarjeta</label>
+            <label for="formNombre">Nombre completo</label>
           </div>
-          <!--columna 2 row 1-->
+          
           <div class="cols">
             <input
-              id="formNumeroTarjeta"
+              id="formNombre"
               type="text"
               class="cols-input"
-              placeholder="1234567890123456"
-              onchange="validacionNumeroTarjeta()"
+              onchange="validacionNombre()"
             />
           </div>
         </div>
-        <!-- row2 -->
+        
         <div class="row rowshight">
-          <!--columna 1 row 2-->
-          <div class="cols">
-            <label for="formMesVencimiento">Mes de vencimiento</label>
-          </div>
-          <!--columna 2 row 2-->
+          
+          <div class="cols"><label for="formCedula">Cedula</label></div>
+          
           <div class="cols">
             <input
-              id="formMesVencimiento"
+              id="formCedula"
               type="text"
               class="cols-input"
-              placeholder="MM"
-              onchange="validacionMesVencimiento()"
-            />
-          </div>
-        </div>
-        <!-- row2 -->
-        <div class="row rowshight">
-          <!--columna 1 row 2-->
-          <div class="cols">
-            <label for="formAnoVencimiento">año de vencimiento</label>
-          </div>
-          <!--columna 2 row 2-->
-          <div class="cols">
-            <input
-              id="formAnoVencimiento"
-              type="text"
-              class="cols-input"
-              placeholder="YYYY"
-              onchange="validacionAnoVencimiento()"
-            />
-          </div>
-        </div>        
-        <!-- row3 -->
-        <div class="row rowshight">
-          <!--columna 1 row 3-->
-          <div class="cols"><label for="formCvv">CVV</label></div>
-          <!--columna 3 row 3-->
-          <div class="cols">
-            <input
-              id="formCvv"
-              type="text"
-              class="cols-input"
-              placeholder="123"
-              onchange="validacionCVV()"
+              onchange="validacionCedula()"
             />
           </div>
         </div>
         <!-- row4 -->
         <div class="row rowshight">
           <!--columna 1 row 4-->
-          <div class="cols"><label for="formNombre">Tipo de tarjeta</label></div>
+          <div class="cols"><label for="formDireccion">Direccion</label></div>
           <!--columna 2 row 4-->
-           <div class="cols">
+          <div class="cols">
             <input
-              id="formNombre"
+              id="formDireccion"
               type="text"
               class="cols-input"
-              readonly
+              onchange="validacionDireccion()"
             />
           </div>
         </div>
-                <!-- row4 -->
         
         <div class="row rowshight">
+          
           <div class="cols">
-            
-            <button type="button" id="butFormCancel" class="buts">
-              Cancel
+            <label for="formEstado">Estado</label>
+          </div>
+          
+          <div class="cols rowshight">
+            <select
+              id="formEstado"
+              class="cols-input"
+              onchange="validacionEstado()"
+            >
+
+            </select>
+          </div>
+        </div>
+        
+        <div class="row rowshight">
+          
+          <div class="cols">
+            <label for="formRol">Rol</label>
+          </div>
+          
+          <div class="cols rowshight">
+            <input
+              id="formRol"
+              type="date"
+              class="cols-input"
+              onchange="validacionRol()"
+            />
+          </div>
+        </div>
+
+        
+        </button>
+          </div>
+          <div class="cols">
+            <button type="button" id="butFormCrear" class="buts">Crear</button>
+          </div>
+          <div class="cols">
+            <button type="button" id="butFormActualizar" class="buts">
+              Actualizar
             </button>
           </div>
-          <div class="cols">
-            <button type="button" id="butFormCrear" class="buts">Pagar</button>
-          </div>
+        </div>
       </form>
     </div>
 
-</body>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script src="https://kit.fontawesome.com/6e5cd7b048.js" crossorigin="anonymous"></script>
-<script src="/js/pantallaPagoController.js"></script>
+
+    <!-- 
+ <hr style="margin: 2%" />
+    <!--
+    <h3>Historial</h3>
+    <div id="divcontainertable">
+      <table id="tableRecord">
+        <thead>
+        <tbody>
+          
+              >
+            </td>
+          </tr>
+          <td>
+              <button type="button" id="butTableBorrar">Borrar</button>
+            </td>
+            <td>
+              <a href="#divformconatiner" type="button" id="butTableActualizar"
+                >Actualizar</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/js/adminReservacionesController.js"></script>
 </html>
