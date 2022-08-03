@@ -18,7 +18,7 @@ form {
     /* border: 2px solid red; */
     width: 35%;
     background-color: rgb(204, 235, 199);
-    height: 330px;
+    height: 885px;
     border-radius: 15px;
 }
 
@@ -37,7 +37,7 @@ form {
 }
 
 .rowshight {
-    height: 10%;
+    height: 30px;
 }
 
 

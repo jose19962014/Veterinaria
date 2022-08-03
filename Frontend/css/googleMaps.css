@@ -1,0 +1,30 @@
+#divcontainermaps {
+    margin: 3%;
+    font-size: 120%;
+    text-align: center;
+    background-color: rgb(167, 221, 183);
+    border-radius: 15px;
+    height: 550px;
+    ;
+}
+
+#map_canvas {
+    margin: 3%;
+    height: 350px;
+    width: 93%;
+}
+
+.rowsmapa {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#divdrirectiongooglemaps {
+    width: 100%;
+}
+
+#txtDireccion {
+    width: 80%;
+    margin: 1%;
+}

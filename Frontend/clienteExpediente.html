@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="/css/clienteExpediente.css" />
     <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/googleMaps.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -128,9 +129,63 @@
           <div class="cols"><label for="formDireccion">Direccion</label></div>
           <!--columna 2 row 4-->
           <div class="cols">
-            <input id="formDireccion" type="text" class="cols-input" onchange="validacionDireccion()" placeholder="EJ:Heredia Barva Barva" />
+            <input id="formDireccion" type="text" class="cols-input" onchange="validacionDireccion()" placeholder="EJ: 50mts sur del parque de barva ultima casa azul" />
           </div>
         </div>
+
+
+
+        <div id="divcontainermaps"> 
+
+          <h4 for="map_canvas">Direccion por google maps</h4>
+          
+
+          <div class="rowsmapa">
+            <div id="divdrirectiongooglemaps">
+              
+                <div ><label for="txtDireccion">Mi direccion</label></div>
+                <input
+                  id="txtDireccion"
+                  type="text"
+                  placeholder="Heredia Barva San pedro"
+                  onchange="movePin()"
+                />
+              </div>
+
+          </div>
+          
+          <div class="rowsmapa">
+            <div >
+
+                <div class=""><label for="txtLat">Latitud</label></div>
+                <input
+                  id="txtLat"
+                  type="text"
+                  class="cols-input"
+                  placeholder="longitud"
+                  readonly
+                />
+              </div>
+
+              <div>
+                <div class=""><label for="txtLng">longitud</label></div>
+                <input
+                  id="txtLng"
+                  type="text"
+                  class="cols-input"
+                  placeholder="Longitud"
+                  readonly
+                />
+              </div>
+
+          </div>
+          <div id="map_canvas"></div>
+        </div>
+
+
+
+
+
         <!-- row5 -->
         <div class="row">
           <!--columna 1 row 5-->
@@ -138,7 +193,7 @@
             <label for="formObservaciones">Observaciones</label>
           </div>
           <!--columna 2 row 5-->
-          <div class="cols rowshight">
+          <div class="cols">
             <textarea
               id="formObservaciones"
               rows="4"
@@ -213,6 +268,16 @@
       </table>
     </div>
   </body>
+
+	<script
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXau9ulLu0rWcI0SBtiKoJM_pm4_iyDSM"
+    ></script>
+
+  <script src="/js/googleMaps.js"></script>
+
+
+
   <script src="https://kit.fontawesome.com/6e5cd7b048.js" crossorigin="anonymous"></script>
      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="/js/clienteExpedienteController.js"></script>
