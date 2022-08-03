@@ -3,34 +3,37 @@
 
 }
 
+
 .divTitulo {
     display: flex;
     justify-content: center;
 }
 
-#divimagenconteiner {
-    border: 2px solid blue ;
-
-}
 #divimagen {
-    border: 2px solid red ;
+    /* border: 2px solid red; */
+    background-color: lightgrey;
     height: 230px;
     width: 275px;
     transform: translate(-25%, 25%);
-    background: url(/imagenes/golden.jpg);
+    /* background: url(); */
 }
 
 #divformconatiner {
     /* border: 2px solid blue ; */
+    margin-top: 6%;
     display: flex;
     justify-content: center;
+}
+
+#labelSelcioneImagen{
+transform: translate(90%, 5%);
 }
 
 form {
     /* border: 2px solid red; */
     width: 35%;
     background-color: rgb(204, 235, 199);
-    height: 550px;
+    height: 350px;
     border-radius: 15px;
 }
 

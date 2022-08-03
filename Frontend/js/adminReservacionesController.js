@@ -29,16 +29,14 @@ function alerttexto(texto){
 
 
 function  validationJustTextNum(texto){
-    const pattern = new RegExp('^[A-Z0-9]+$', 'i');
-    
+    const pattern = /^[A-Z0-9\s]+$/gi;
     return  pattern.test(texto);
 }
 
-function  validationJustNum(numero){
-    const pattern = new RegExp('^[0-9]+$', 'i');
-    return  pattern.test(numero);
+function  validationJustCedula(numero){
+   const pattern = /(\d{1}-\d{1,4}-\d{1,4})+$/g;
+    return pattern.test(numero);;
 }
-
 
 function limpiarForm(){
     formNombreMascota.value = '';
@@ -71,6 +69,7 @@ function validacionNombreMascota(){
     }
     else{
         formNombreMascota.style.borderColor = 'palegreen';
+        return true;
     }
 }
 
@@ -83,12 +82,13 @@ function validacionNombreDueno(){
     } 
     else{
         formNombreDueño.style.borderColor = 'palegreen';
+        return true;
     }
 }
 
 function validacionCedula(){
     let numFormCedula =  formCedula.value;
-    if(!validationJustNum(numFormCedula)){
+    if(!validationJustCedula(numFormCedula)){
         alerttexto('Numero de cedula solo admite numeros y no puede estar vacio')
         formCedula.style.borderColor = 'red';
         return;
@@ -96,6 +96,7 @@ function validacionCedula(){
  
     else{
         formCedula.style.borderColor = 'palegreen';
+        return true;
     }
 }
 
@@ -110,6 +111,7 @@ if(!validationJustTextNum(textformDireccion)){
  
     else{
         formDireccion.style.borderColor = 'palegreen';
+        return true;
     }
 }
 
@@ -122,6 +124,7 @@ function validacionDoctor(){
   }
   else{
     formDoctor.style.borderColor = 'palegreen';
+    return true;
   }
 }
 
@@ -141,6 +144,7 @@ function validacionFechaEntrada(){
         }
         else{
             formFechaIngreso.style.borderColor = 'palegreen';
+            return true;
         }
     }
     else{
@@ -157,6 +161,7 @@ function validacionFechaSalida(){
     {
 
         formFechaSalida.style.borderColor = 'palegreen';
+        return true;
         
     }
     else{
@@ -174,6 +179,23 @@ function validacionDeData (){
     validacionFechaEntrada();
     validacionDoctor();
     validacionFechaSalida();
+
+
+     if(validacionNombreMascota()){
+        if(validacionNombreDueno()){
+            if(validacionCedula()){
+                if(validacionDireccion()){
+                    if(validacionFechaEntrada()){
+                        if(validacionDoctor()){
+                            if(validacionFechaSalida()){
+                                return true
+                            }else{return false;}
+                        }else{return false;}
+                    }else{return false;}
+                }else{return false;}
+            }else{return false;}
+        }else{return false;}
+    }else{return false;}
 }
 
 
@@ -191,7 +213,36 @@ butFormCancel.addEventListener('click',function(){
 })
 
 butFormCrear.addEventListener("click",function(){
-    validacionDeData();
+if(validacionDeData()){
+
+        const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: 'btn btn-success',
+            cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
+        title: 'El Moton a pagar?',
+        text: "El moton a pgar son 75000 colones",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Si, Continuar',
+        cancelButtonText: 'No',
+        reverseButtons: true
+        }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "/pantallaPago.html"
+        } else if (
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            
+            limpiarForm();
+        }
+        })
+
+    }
 })
 
 butformActualizar.addEventListener("click",function(){

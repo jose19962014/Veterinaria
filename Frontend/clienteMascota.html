@@ -23,14 +23,15 @@
                 <li><a href= "index.html"><type="button"><i class="fa-solid fa-house-user"></i></button></a></li>
             
                 <li class="submenu">
-                    <a href="#"><span>Veterinaria<span ></span></a>
+                    <a href="/index.html"><span>Veterinaria<span ></span></a>
                     <ul class="children">
-                        <li><a href="/clienteMascota.html">Mi mascota </a></li>
+                        <li><a href="/clienteMascota.html">Mis mascotas</a></li>
+                        <li><a href="/clienteNewCita.html">Nueva cita</a></li>
                     </ul>
                 </li>
                 
                 <li class="submenu">
-                    <a href="#">Hotel</a>
+                    <a href="/clienteHotel.html">Hotel</a>
                     <ul class="children">
                         <li><a href="/clienteReservacion.html">Reservaciones </a></li>
 
@@ -56,8 +57,12 @@
             </ul>
         </nav>
     </section>
-
+    <div  id="divButtonNuevaMascota">
+      <button id="butAnadirNuevaMascota">Click aqui para Anadir Nueva Mascota</button>
+    </div>
+    
     <div id="contenedorTabla">
+       <div class="divTitulo"><h3>Listado de mis mascotas</h3></div>
       <table id="mascotas">
         <thead>
           <tr>
@@ -82,5 +87,5 @@
     </div>
   </body>
   <script src="https://kit.fontawesome.com/6e5cd7b048.js" crossorigin="anonymous"></script>
-
+  <script src="/js/clienteMascotasController.js"></script>
 </html>

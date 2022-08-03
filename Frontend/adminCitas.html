@@ -34,14 +34,15 @@
                 <li><a href= "index.html"><type="button"><i class="fa-solid fa-house-user"></i></button></a></li>
             
                 <li class="submenu">
-                    <a href="#"><span>Veterinaria<span ></span></a>
+                    <a href="/index.html"><span>Veterinaria<span ></span></a>
                     <ul class="children">
-                        <li><a href="/clienteMascota.html">Mi mascota </a></li>
+                        <li><a href="/clienteMascota.html">Mis mascotas </a></li>
+                        <li><a href="/clienteNewCita.html">Nueva cita</a></li>
                     </ul>
                 </li>
                 
                 <li class="submenu">
-                    <a href="#">Hotel</a>
+                    <a href="/clienteHotel.html">Hotel</a>
                     <ul class="children">
                         <li><a href="/clienteReservacion.html">Reservaciones </a></li>
 
@@ -68,9 +69,10 @@
         </nav>
     </section>
   
-    <h3 style="margin-top: 2%">Formulario</h3>
+   <div class="divTitulo"><h3>Formulario para crear nueva cita</h3></div>
     <!-- div de cuestionario -->
     <div id="divformconatiner">
+      
       <form>
         <!-- row1 -->
         <div class="row rowshight" style="margin-top: 1%">
@@ -80,7 +82,7 @@
           </div>
           <!--columna 2 row 1-->
           <div class="cols">
-            <input id="formNombreMascota" type="text" class="cols-input" />
+            <input id="formNombreMascota" type="text" class="cols-input" onchange="validacionNombreMascota()" placeholder="EJ:pepe campana"/>
           </div>
         </div>
         <!-- row2 -->
@@ -91,7 +93,7 @@
           </div>
           <!--columna 2 row 2-->
           <div class="cols">
-            <input id="formNombreDueño" type="text" class="cols-input" />
+            <input id="formNombreDueño" type="text" class="cols-input" onchange=" validacionNombreDueno()" Placeholder="EJ:alberto franciso hernandez zarate" />
           </div>
         </div>
         <!-- row3 -->
@@ -100,7 +102,7 @@
           <div class="cols"><label for="formCedula">Cedula</label></div>
           <!--columna 3 row 3-->
           <div class="cols">
-            <input id="formCedula" type="text" class="cols-input" />
+            <input id="formCedula" type="text" class="cols-input" onchange=" validacionCedula()" placeholder="EJ:5-0555-0444"/>
           </div>
         </div>
         <!-- row4 -->
@@ -109,7 +111,7 @@
           <div class="cols"><label for="formDireccion">Direccion</label></div>
           <!--columna 2 row 4-->
           <div class="cols">
-            <input id="formDireccion" type="text" class="cols-input" />
+            <input id="formDireccion" type="text" class="cols-input" onchange="validacionDireccion()" placeholder="EJ:Heredia Barva Barva"/>
           </div>
         </div>
         <!-- row5 -->
@@ -120,7 +122,7 @@
           </div>
           <!--columna 2 row 5-->
           <div class="cols rowshight">
-            <select id="formDoctor" class="cols-input">
+            <select id="formDoctor" class="cols-input" onchange="validacionDoctor()" placeholder="Le hace falta un corte de uñas">
               <option value="0">Select</option>
               <option value="1">Sergio</option>
               <option value="2">Fabian</option>
@@ -140,6 +142,7 @@
               id="formFechaIngreso"
               type="datetime-local"
               class="cols-input"
+              onchange="validacionFechaEntrada()"
             />
           </div>
         </div>
@@ -164,7 +167,7 @@
     <!-- ####################################################################################################################################################################################################### -->
     <hr style="margin: 2%" />
     <!-- ####################################################################################################################################################################################################### -->
-    <h3>Historial</h3>
+    <div class="divTitulo"><h3>Listado de citas</h3></div>
     <div id="divcontainertable">
       <table id="tableRecord">
         <thead>

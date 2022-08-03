@@ -2,12 +2,23 @@
     font-family: 'Asap', sans-serif;
     
 }
-
+.divTitulo {
+    display: flex;
+    justify-content: center;
+}
 
 #divformconatiner{
     /* border: 2px solid blue ; */
     display: flex;
     justify-content: center;
+}
+
+#divimagen {
+    border: 2px solid red;
+    height: 230px;
+    width: 275px;
+    transform: translate(-25%, 25%);
+    background: url(/imagenes/golden.jpg);
 }
 
 form{

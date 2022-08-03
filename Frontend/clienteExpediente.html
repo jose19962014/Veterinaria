@@ -34,14 +34,15 @@
                 <li><a href= "index.html"><type="button"><i class="fa-solid fa-house-user"></i></button></a></li>
             
                 <li class="submenu">
-                    <a href="#"><span>Veterinaria<span ></span></a>
+                    <a href="/index.html"><span>Veterinaria<span ></span></a>
                     <ul class="children">
-                        <li><a href="/clienteMascota.html">Mi mascota </a></li>
+                        <li><a href="/clienteMascota.html">Mis mascotas</a></li>
+                        <li><a href="/clienteNewCita.html">Nueva cita</a></li>
                     </ul>
                 </li>
                 
                 <li class="submenu">
-                    <a href="#">Hotel</a>
+                    <a href="/clienteHotel.html">Hotel</a>
                     <ul class="children">
                         <li><a href="/clienteReservacion.html">Reservaciones </a></li>
 
@@ -69,13 +70,12 @@
     </section>
 
 
-    <h3 style="margin-top: 2%">Formulario</h3>
+    <div class="divTitulo"><h3>Formulario para actualizar expediente</h3></div>
 
     <!-- div de cuestionario -->
     <div id="divformconatiner">
       <!-- div imagen  -->
       <div id="divimagen"></div>
-
       <!-- start form -->
       <form>
         <!-- row1 -->
@@ -90,7 +90,9 @@
               id="formNombreMascota"
               type="text"
               class="cols-input"
-              readonly
+              onchange="validacionNombreMascota()"
+              placeholder="EJ:pepe campana"
+              
             />
           </div>
         </div>
@@ -106,7 +108,8 @@
               id="formNombreDueño"
               type="text"
               class="cols-input"
-              readonly
+              onchange="validacionNombreDueno()"
+              Placeholder="EJ:alberto franciso hernandez zarate"
             />
           </div>
         </div>
@@ -116,7 +119,7 @@
           <div class="cols"><label for="formCedula">Cedula</label></div>
           <!--columna 3 row 3-->
           <div class="cols">
-            <input id="formCedula" type="text" class="cols-input" readonly />
+            <input id="formCedula" type="text" class="cols-input" onchange="validacionCedula()" placeholder="EJ:5-0555-0444"/>
           </div>
         </div>
         <!-- row4 -->
@@ -125,7 +128,7 @@
           <div class="cols"><label for="formDireccion">Direccion</label></div>
           <!--columna 2 row 4-->
           <div class="cols">
-            <input id="formDireccion" type="text" class="cols-input" readonly />
+            <input id="formDireccion" type="text" class="cols-input" onchange="validacionDireccion()" placeholder="EJ:Heredia Barva Barva" />
           </div>
         </div>
         <!-- row5 -->
@@ -168,12 +171,24 @@
             </tbody>
           </table>
         </div>
+        <div class="row rowshight">
+         <div class="cols">
+            <button type="button" id="butFormCancel" class="buts">
+              Cancel
+            </button>
+          </div>              
+          <div class="cols">
+            <button type="button" id="butFormActualizar" class="buts">
+              Actualizar
+            </button>
+          </div>
+        </div>        
       </form>
     </div>
     <!-- ####################################################################################################################################################################################################### -->
     <hr style="margin: 2%" />
     <!-- ####################################################################################################################################################################################################### -->
-    <h3>Historial</h3>
+    <div class="divTitulo"><h3>Listado de citas de mi mascota</h3></div>
     <div id="divcontainertable">
       <table id="tableRecord">
         <thead>
@@ -199,5 +214,7 @@
     </div>
   </body>
   <script src="https://kit.fontawesome.com/6e5cd7b048.js" crossorigin="anonymous"></script>
+     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="/js/clienteExpedienteController.js"></script>
+
 </html>

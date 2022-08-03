@@ -1,12 +1,14 @@
-
-let formObservaciones = document.querySelector('#formObservaciones');
-let formDireccion = document.querySelector('#formDireccion');
-let formCedula = document.querySelector('#formCedula');
-let formNombreDueño = document.querySelector('#formNombreDueño');
 let formNombreMascota = document.querySelector('#formNombreMascota');
-//botones
-let butformActualizar = document.querySelector('#butFormActualizar');
+let formNombreDueño = document.querySelector('#formNombreDueño');
+let formCedula = document.querySelector('#formCedula');
+let formDireccion = document.querySelector('#formDireccion');
+
+
+let butFormCrear = document.querySelector('#butFormCrear');
+
 let formbutFormCancel = document.querySelector("#butFormCancel");
+
+
 
 
 
@@ -26,7 +28,6 @@ function  validationJustTextNum(texto){
     return  pattern.test(texto);
 }
 
-
 function  validationJustCedula(numero){
    const pattern = /(\d{1}-\d{1,4}-\d{1,4})+$/g;
     return pattern.test(numero);;
@@ -36,19 +37,16 @@ function limpiarForm(){
     formNombreMascota.value = '';
     formNombreDueño.value = '';
     formCedula.value = '';
+    formObservaciones.value = '';
     formDireccion.value = '';
-    formDoctor.value = 0;
-    formFechaIngreso.value = "";
-    formFechaSalida.value = "";
-  
+    formPadecimientos.value = 0; 
   
     formNombreMascota.style.borderColor = 'white';
     formNombreDueño.style.borderColor = 'white';
     formCedula.style.borderColor = 'white';
+    formObservaciones.style.borderColor = 'white';
     formDireccion.style.borderColor = 'white';
-    formDoctor.style.borderColor = 'white';
-    formFechaIngreso.style.borderColor = 'white';
-    formFechaSalida.style.borderColor = 'white';
+    formPadecimientos.style.borderColor = 'white';
 
     butFormCrear.disabled = false;
 }
@@ -80,9 +78,8 @@ function validacionNombreDueno(){
 
 function validacionCedula(){
     let numFormCedula =  formCedula.value;
-     if( !validationJustCedula(numFormCedula)){
-
-        alerttexto('Numero de cedula solo admite numeros, no puede estar vacio y cantidad de digitos tiene que ser 9')
+    if(!validationJustCedula(numFormCedula)){
+        alerttexto('Numero de cedula solo admite numeros y no puede estar vacio')
         formCedula.style.borderColor = 'red';
         return;
     }
@@ -108,31 +105,35 @@ if(!validationJustTextNum(textformDireccion)){
 
 
 
-
-
-
 function validacionDeData (){
+
+
     validacionNombreMascota();
     validacionNombreDueno();
     validacionCedula();
     validacionDireccion();
+        
 }
 
 
+///funciones de la tabla
+function getExpedineteById(index){
+    butFormCrear.disabled = true;
+}
 
-butformActualizar.addEventListener('click',function(){
-    validacionDeData();
-});
+
+//botones del form
 
 formbutFormCancel.addEventListener('click',function(){
     window.location.href="/clienteMascota.html";
 });
 
 
-addEventListener('DOMContentLoaded', (event) => {
-    formObservaciones.value = "sobre peso \n uñas largas";
-    formDireccion.value = "San jose Tibas";
-    formCedula.value = "5-0767-0898"; 
-    formNombreDueño.value = "Jose"; 
-    formNombreMascota.value = "Santi"; 
-});
+butFormCrear.addEventListener("click",function(){
+    validacionDeData();
+})
+
+
+
+
+

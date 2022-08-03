@@ -3,11 +3,39 @@
     
 }
 
+.divTitulo {
+    display: flex;
+    justify-content: center;
+}
+
+#divButtonNuevaMascota{
+    /* border: 2px solid red; */
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content:space-around;
+
+}
+
+#butAnadirNuevaMascota{
+    background-color: rgb(121, 204, 196); 
+    height: 50%;
+    margin: auto;
+    font-size: x-large;
+    border: none;
+    border-radius: 15px;
+
+}
+#butAnadirNuevaMascota:hover{
+    background-color : rgb(131, 218, 213);
+}
+
 
 
 #contenedorTabla{
     width: 100%;
-    padding-top: 300px;
+    padding-top: 5%;
+    text-align: center;
 }
 
 #mascotas{

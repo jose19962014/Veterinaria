@@ -3,7 +3,10 @@
 
 }
 
-
+.divTitulo {
+    display: flex;
+    justify-content: center;
+}
 
 #divformconatiner {
     /* border: 2px solid blue ; */

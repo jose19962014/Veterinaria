@@ -6,6 +6,10 @@
 body {
     background-color: rgb(75, 179, 210);
 }
+.divTitulo {
+    display: flex;
+    justify-content: center;
+}
 
 #divformconatiner {
     /* border: 2px solid blue ; */

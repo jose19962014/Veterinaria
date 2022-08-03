@@ -8,29 +8,18 @@
     justify-content: center;
 }
 
-#divimagenconteiner {
-    border: 2px solid blue ;
-
-}
-#divimagen {
-    border: 2px solid red ;
-    height: 230px;
-    width: 275px;
-    transform: translate(-25%, 25%);
-    background: url(/imagenes/golden.jpg);
-}
-
 #divformconatiner {
     /* border: 2px solid blue ; */
     display: flex;
     justify-content: center;
+
 }
 
 form {
     /* border: 2px solid red; */
     width: 35%;
     background-color: rgb(204, 235, 199);
-    height: 550px;
+    height: 330px;
     border-radius: 15px;
 }
 
@@ -88,46 +77,3 @@ form {
     background-color: lightgray;
 }
 
-
-/* #################################################################################################################################################################################################################### */
-/* parte de la tabla */
-
-
-#divcontainertable {
-    width: 100%;
-}
-
-#tableRecord {
-    background-color: rgb(204, 235, 199);
-    border-collapse: collapse;
-    width: 80%;
-    margin: auto;
-}
-
-#tableRecord thead {
-    background-color: rgb(167, 221, 183);
-}
-
-
-
-#tableRecord td,
-#tableRecord th {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-#tableRecord tr:nth-child(even) {
-    background-color: rgb(167, 221, 183);
-}
-
-#tableRecord tr:hover {
-    background-color: rgb(224, 243, 220);
-}
-
-#tableRecord th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: rgb(121, 204, 196);
-    color: white;
-}

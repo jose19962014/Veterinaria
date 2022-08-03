@@ -3,6 +3,10 @@
 
 }
 
+.divTitulo {
+    display: flex;
+    justify-content: center;
+}
 
 
 #divformconatiner {

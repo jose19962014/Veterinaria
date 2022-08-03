@@ -34,14 +34,15 @@
                 <li><a href= "index.html"><type="button"><i class="fa-solid fa-house-user"></i></button></a></li>
             
                 <li class="submenu">
-                    <a href="#"><span>Veterinaria<span ></span></a>
+                    <a href="/index.html"><span>Veterinaria<span ></span></a>
                     <ul class="children">
-                        <li><a href="/clienteMascota.html">Mi mascota </a></li>
+                        <li><a href="/clienteMascota.html">Mis mascotas </a></li>
+                        <li><a href="/clienteNewCita.html">Nueva cita</a></li>
                     </ul>
                 </li>
                 
                 <li class="submenu">
-                    <a href="#">Hotel</a>
+                    <a href="/clienteHotel.html">Hotel</a>
                     <ul class="children">
                         <li><a href="/clienteReservacion.html">Reservaciones </a></li>
 
@@ -68,9 +69,11 @@
         </nav>
     </section>
 
-    <h3 style="margin-top: 2%">Formulario</h3>
+    <div class="divTitulo"><h3>Formulario para crear expediente</h3></div>
     <!-- div de cuestionario -->
     <div id="divformconatiner">
+      <!-- div imagen  -->
+      <div id="divimagen"></div>
       <form>
         <!-- row1 -->
         <div class="row rowshight" style="margin-top: 1%">
@@ -85,6 +88,7 @@
               type="text"
               class="cols-input"
               onchange="validacionNombreMascota()"
+              placeholder="EJ:pepe campana"
             />
           </div>
         </div>
@@ -101,6 +105,7 @@
               type="text"
               class="cols-input"
               onchange="validacionNombreDueno()"
+              Placeholder="EJ:alberto franciso hernandez zarate"
             />
           </div>
         </div>
@@ -115,6 +120,7 @@
               type="text"
               class="cols-input"
               onchange="validacionCedula()"
+              placeholder="EJ:5-0555-0444"
             />
           </div>
         </div>
@@ -129,6 +135,7 @@
               type="text"
               class="cols-input"
               onchange="validacionDireccion()"
+              placeholder="EJ:Heredia Barva Barva"
             />
           </div>
         </div>
@@ -145,6 +152,7 @@
               rows="4"
               class="cols-input"
               onchange="validacionObservacion()"
+              placeholder="Le hace falta un corte de uñas"
             ></textarea>
           </div>
         </div>
@@ -212,7 +220,7 @@
     <!-- ####################################################################################################################################################################################################### -->
     <hr style="margin: 2%" />
     <!-- ####################################################################################################################################################################################################### -->
-    <h3>Historial</h3>
+    <div class="divTitulo"><h3>Listado de expedientes</h3></div>
     <div id="divcontainertable">
       <table id="tableRecord">
         <thead>

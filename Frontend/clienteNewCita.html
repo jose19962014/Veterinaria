@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="/css/adminReservaciones.css" />
+    <link rel="stylesheet" href="/css/clienteNewCita.css" />
     <link rel="stylesheet" href="/css/navbar.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,9 +16,8 @@
     />
   </head>
   <body>
-
-
-    <header class="header-principal">
+    
+        <header class="header-principal">
         <div class="logo">
             <img src="imagenes/vet.jpg" alt="">
         </div>
@@ -55,7 +54,7 @@
                 <li class="submenu">
                     <a href="#"> admin</a>
                     <ul class="children">
-                        <li><a href="#">Modificar usuarios </a></li>
+                        <li><a href="/adminUsuarios.html">Modificar usuarios </a></li>
                         <li><a href="/adminModificarMascotas.html">Modificar mascotas </a></li>
                         <li><a href="/adminPadecimientos.html">Modificar padecimientos </a></li>
                         <li><a href="/adminExpendiente.html">Modificar expediente </a></li>
@@ -69,8 +68,8 @@
             </ul>
         </nav>
     </section>
-
-   <div class="divTitulo"><h3>Formulario para crear reservacion</h3></div>
+  
+     <div class="divTitulo"><h3>Formulario para crear cita</h3></div>
     <!-- div de cuestionario -->
     <div id="divformconatiner">
       <form>
@@ -82,13 +81,7 @@
           </div>
           <!--columna 2 row 1-->
           <div class="cols">
-            <input
-              id="formNombreMascota"
-              type="text"
-              class="cols-input"
-              onchange="validacionNombreMascota()"
-              placeholder="EJ:pepe campana"
-            />
+            <input id="formNombreMascota" type="text" class="cols-input" onchange="validacionNombreMascota()" placeholder="EJ:pepe campana"/>
           </div>
         </div>
         <!-- row2 -->
@@ -99,13 +92,7 @@
           </div>
           <!--columna 2 row 2-->
           <div class="cols">
-            <input
-              id="formNombreDueño"
-              type="text"
-              class="cols-input"
-              onchange="validacionNombreDueno()"
-              Placeholder="EJ:alberto franciso hernandez zarate"
-            />
+            <input id="formNombreDueño" type="text" class="cols-input" onchange=" validacionNombreDueno()" Placeholder="EJ:alberto franciso hernandez zarate"/>
           </div>
         </div>
         <!-- row3 -->
@@ -114,13 +101,7 @@
           <div class="cols"><label for="formCedula">Cedula</label></div>
           <!--columna 3 row 3-->
           <div class="cols">
-            <input
-              id="formCedula"
-              type="text"
-              class="cols-input"
-              onchange="validacionCedula()"
-              placeholder="EJ:5-0555-0444"
-            />
+            <input id="formCedula" type="text" class="cols-input" onchange=" validacionCedula()" placeholder="EJ:5-0555-0444"/>
           </div>
         </div>
         <!-- row4 -->
@@ -129,13 +110,7 @@
           <div class="cols"><label for="formDireccion">Direccion</label></div>
           <!--columna 2 row 4-->
           <div class="cols">
-            <input
-              id="formDireccion"
-              type="text"
-              class="cols-input"
-              onchange="validacionDireccion()"
-              placeholder="EJ:Heredia Barva Barva"
-            />
+            <input id="formDireccion" type="text" class="cols-input" onchange="validacionDireccion()" placeholder="EJ:Heredia Barva Barva"/>
           </div>
         </div>
         <!-- row5 -->
@@ -146,11 +121,7 @@
           </div>
           <!--columna 2 row 5-->
           <div class="cols rowshight">
-            <select
-              id="formDoctor"
-              class="cols-input"
-              onchange="validacionDoctor()"
-            >
+            <select id="formDoctor" class="cols-input" onchange="validacionDoctor()">
               <option value="0">Select</option>
               <option value="1">Sergio</option>
               <option value="2">Fabian</option>
@@ -162,35 +133,19 @@
         <div class="row rowshight">
           <!--columna 1 row 6-->
           <div class="cols">
-            <label for="formFechaIngreso">Fecha de entrada</label>
+            <label for="formFechaIngreso">Fecha de cita</label>
           </div>
           <!--columna 2 row 6-->
           <div class="cols rowshight">
             <input
               id="formFechaIngreso"
-              type="date"
+              type="datetime-local"
               class="cols-input"
               onchange="validacionFechaEntrada()"
             />
           </div>
         </div>
 
-        <!-- row7 -->
-        <div class="row rowshight">
-          <!--columna 1 row 7 -->
-          <div class="cols">
-            <label for="formFechaSalida">Fecha de salida</label>
-          </div>
-          <!--columna 2 row 7 -->
-          <div class="cols">
-            <input
-              id="formFechaSalida"
-              type="date"
-              class="cols-input"
-              onchange="validacionFechaSalida()"
-            />
-          </div>
-        </div>
         <div class="row rowshight">
           <div class="cols">
             <button type="button" id="butFormCancel" class="buts">
@@ -200,69 +155,15 @@
           <div class="cols">
             <button type="button" id="butFormCrear" class="buts">Crear</button>
           </div>
-          <div class="cols">
-            <button type="button" id="butFormActualizar" class="buts">
-              Actualizar
-            </button>
-          </div>
         </div>
       </form>
     </div>
     <!-- ####################################################################################################################################################################################################### -->
-    <hr style="margin: 2%" />
+    <!-- <hr style="margin: 2%" /> -->
     <!-- ####################################################################################################################################################################################################### -->
-    <div class="divTitulo"><h3>Listado de reservaciones</h3></div>
-    <div id="divcontainertable">
-      <table id="tableRecord">
-        <thead>
-          <tr>
-            <th>Nombre de mascota</th>
-            <th>Nombre del dueno</th>
-            <th>cedula</th>
-            <th>Direccion</th>
-            <th>Fecha de entrada</th>
-            <th>Fecha de salida</th>
-            <th>Cancelar</th>
-            <th>Actualizar</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Santi</td>
-            <td>Jose Alvarado</td>
-            <td>1234567</td>
-            <td>San Jose tibas</td>
-            <td>8/16/2022 6:00:00pm</td>
-            <td>8/18/2022 11:00:00am</td>
-            <td><button type="button">Borrar</button></td>
-            <td>
-              <a href="#divformconatiner" type="button" id="butTableActualizar"
-                >Actualizar</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>Campana</td>
-            <td>Freddy Alvarado</td>
-            <td>987456</td>
-            <td>San Jose tibas</td>
-            <td>9/20/2022 6:00:00pm</td>
-            <td>9/29/2022 11:00:00am</td>
-            <td>
-              <button type="button" id="butTableBorrar">Borrar</button>
-            </td>
-            <td>
-              <a href="#divformconatiner" type="button" id="butTableActualizar"
-                >Actualizar</a
-              >
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    
   </body>
   <script src="https://kit.fontawesome.com/6e5cd7b048.js" crossorigin="anonymous"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="/js/adminReservacionesController.js"></script>
-  
+  <script src="/js/clienteNewCitaController.js"></script>
 </html>

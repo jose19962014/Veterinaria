@@ -24,38 +24,40 @@ function alerttexto(texto){
 
 
 
+
 function  validationJustTextNum(texto){
-    const pattern = new RegExp('^[A-Z0-9]+$', 'i');
-    
+    const pattern = /^[A-Z0-9\s]+$/gi;
     return  pattern.test(texto);
 }
 
+
+
 function  validationJustNum(numero){
     const pattern = new RegExp('^[0-9]+$', 'i');
-    numero = numero.replaceAll(" ","");
     return  pattern.test(numero);
 
 }
 
+
 function  validationTipoTarjeta(texto){
-    const   VISA = new RegExp("^4[0-9]{3}-?[0-9]{4}-?[0-9]{4}-?[0-9]{4}$");
-    const   MASTERCARD = new RegExp("^5[1-5][0-9]{2}-?[0-9]{4}-?[0-9]{4}-?[0-9]   {4}$");
-    const   AMEX = new RegExp("^3[47][0-9-]{16}$");
+    const   VISA = /^4[47][0-9]{13}$/;
+    const   MASTERCARD = /5[1-5][0-9]{14}$/;
+    const   AMEX = /^3[47][0-9]{13}$/;
 
-
-
-    if(texto[0] == 4 && texto.length >= 14){
+    if(VISA.test(texto)){
         return "VISA";
     }
-    else if(texto[0] == 5 && texto.length >= 14){
+    else if(MASTERCARD.test(texto)){
         return "MASTERCARD";
     }
-    else if(texto[0] == 3 && texto.length >=14){
+    else if(AMEX.test(texto)){
         return "AMEX";
     }
     else{
         return "Numero de tarjeta no valido"
     }
+
+
 }
 function limpiarForm(){
 
@@ -90,6 +92,7 @@ function validacionNumeroTarjeta(){
 
             formNumeroTarjeta.style.borderColor = 'palegreen';
             formNombre.value = tipoTarjeta;
+            return true;
         }
         else{
             alerttexto(tipoTarjeta)
@@ -100,15 +103,25 @@ function validacionNumeroTarjeta(){
 
 function validacionMesVencimiento(){
     let textformMesVencimiento = formMesVencimiento.value;
-    if(!validationJustNum(textformMesVencimiento ) || !(parseInt(textformMesVencimiento) >= 1  && parseInt(textformMesVencimiento)  <= 12)){
-        alerttexto('Mes de vencimiento de tarjeta solo admite numeros, no puede estar vacio maximo y minimo 2 dijitos')
-        formNombreDueño.style.borderColor = 'red';
+    if(textformMesVencimiento.length == 2 ){
+        if((!validationJustNum(textformMesVencimiento ) || !(parseInt(textformMesVencimiento) >= 1  && parseInt(textformMesVencimiento)  <= 12) )){
+        
+            alerttexto('Mes de vencimiento de tarjeta solo admite numeros de 01 a 12')
+            formMesVencimiento.style.borderColor = 'red';
+            return;
+        } 
+        else{
+
+            formMesVencimiento.style.borderColor = 'palegreen';
+            return true;
+        }
+
+    }
+    else{
+        alerttexto('Mes de vencimiento de tarjeta tiene que tener maximo y minimo 2 dijitos ej 01')
+        formMesVencimiento.style.borderColor = 'red';
         return;
     } 
-    else{
-
-        formMesVencimiento.style.borderColor = 'palegreen';
-    }
 }
 
 
@@ -122,13 +135,14 @@ function validacionAnoVencimiento(){
     else{
 
         formanoVencimiento.style.borderColor = 'palegreen';
+        return true;
     }
 }
 
 
 function validacionCVV(){
     let textformCvv= formCvv.value;
-    if(!validationJustNum(textformCvv ) || !(parseInt(textformCvv) >= 1  && parseInt(textformCvv)  <= 9999)){
+    if(!validationJustNum(textformCvv ) || !(parseInt(textformCvv) >= 0  && parseInt(textformCvv)  <= 9999)){
         alerttexto('Ano de vencimiento de tarjeta solo admite numeros, no puede estar vacio maximo  y minimo 4 dijitos')
         formCvv.style.borderColor = 'red';
         return;
@@ -136,15 +150,23 @@ function validacionCVV(){
     else{
 
         formCvv.style.borderColor = 'palegreen';
+        return true;
     }
 }
 
 function validacionDeData (){
-    validacionNumeroTarjeta();
-    validacionMesVencimiento();
-    validacionAnoVencimiento();
-    validacionCVV();
 
+
+        if(validacionNumeroTarjeta()){
+        if(validacionMesVencimiento()){
+            if(validacionAnoVencimiento()){
+                if(validacionCVV()){
+                    return true;
+                }else{return false;}
+            }else{return false;}
+        }else{return false;}
+    }else{return false;}
+  
 }
 
 
@@ -162,8 +184,10 @@ butFormCancel.addEventListener('click',function(){
 })
 
 butFormCrear.addEventListener("click",function(){
-    validacionDeData();
-   document.location.href="/factura.html";
+    if(validacionDeData()){
+     document.location.href="/factura.html";
+    }
+   
 })
 
 
