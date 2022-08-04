@@ -245,7 +245,7 @@
     <!-- ####################################################################################################################################################################################################### -->
     <div class="divTitulo"><h3>Listado de citas de mi mascota</h3></div>
     <div id="divcontainertable">
-      <table id="tableRecord">
+      <table id="tableRecord" style="text-align:center;">
         <thead>
           <tr>
             <th>Dia de la cita</th>
@@ -257,12 +257,72 @@
           <tr>
             <td>7/14/2020 11:00:00Am</td>
             <td>Sobre peso</td>
-            <td>5</td>
+            <td >
+              <select id="selectCalificacion" style="font-size: large ;">
+                <option value="0" >Selecionar Calificacion<i class="fa-solid fa-star-sharp"></i></option>
+                <option value="1">
+                 &#9733;
+                </option>
+                <option value="2" >
+                  &#9733;
+                  &#9733;
+                </option>
+                <option value="3">
+                  &#9733;
+                  &#9733;
+                  &#9733;
+                </option>
+                <option value="4">
+                  &#9733;
+                  &#9733;
+                  &#9733;
+                 &#9733;
+                </option>
+                <option value="5">
+                  &#9733;
+                  &#9733;
+                  &#9733;
+                  &#9733;
+                  &#9733;
+                </option>
+              </select>
+              <button type="button" id="tableButEnviarCalificacion" style="font-size:large;">enviar Calificacion</button>
+            </td>
           </tr>
           <tr>
             <td>01/02/2022 03:00:00PM</td>
             <td>Uñas largas</td>
-            <td>3</td>
+                       <td >
+              <select id="selectCalificacion" style="font-size: large ;">
+                <option value="0" >Selecionar Calificacion<i class="fa-solid fa-star-sharp"></i></option>
+                <option value="1">
+                 &#9733;
+                </option>
+                <option value="2" >
+                  &#9733;
+                  &#9733;
+                </option>
+                <option value="3">
+                  &#9733;
+                  &#9733;
+                  &#9733;
+                </option>
+                <option value="4">
+                  &#9733;
+                  &#9733;
+                  &#9733;
+                 &#9733;
+                </option>
+                <option value="5">
+                  &#9733;
+                  &#9733;
+                  &#9733;
+                  &#9733;
+                  &#9733;
+                </option>
+              </select>
+              <button type="button" id="tableButEnviarCalificacion" style="font-size:large;">enviar Calificacion</button>
+            </td>
           </tr>
         </tbody>
       </table>
