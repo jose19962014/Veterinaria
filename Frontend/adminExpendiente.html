@@ -17,6 +17,9 @@
       href="https://fonts.googleapis.com/css2?family=Asap&display=swap"
       rel="stylesheet"
     />
+    
+
+
   </head>
   <body>
 
@@ -75,8 +78,13 @@
     <div class="divTitulo"><h3>Formulario para crear expediente</h3></div>
     <!-- div de cuestionario -->
     <div id="divformconatiner">
+
       <!-- div imagen  -->
-      <div id="divimagen"></div>
+      <div id="divimagen">
+        <button id="butSubirImagen">Subir imagen</button> <img id="contendorImagen">
+      </div>
+
+
       <form>
         <!-- row1 -->
         <div class="row rowshight" style="margin-top: 1%">
@@ -228,18 +236,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Hepatitis canina</td>
-                <td><button type="button">X</button></td>
-              </tr>
-              <tr>
-                <td>Brucelosis</td>
-                <td><button type="button">X</button></td>
-              </tr>
-              <tr>
-                <td>Sarna</td>
-                <td><button type="button">X</button></td>
-              </tr>
+              
             </tbody>
           </table>
         </div>
@@ -252,7 +249,7 @@
           </div>
           <!--columna 2 row 7 -->
           <div class="cols">
-            <select id="formPadecimientos" class="cols-input">
+            <select id="formPadecimientos" class="cols-input" onchange="agregarPadecimientoEnTabla()">
               <option value="0">Select</option>
               <option value="1">Rabia</option>
               <option value="2">Azucar</option>
@@ -285,6 +282,7 @@
       <table id="tableRecord">
         <thead>
           <tr>
+            <td hidden>id</td>
             <th>Nombre de mascota</th>
             <th>Nombre del dueno</th>
             <th>cedula</th>
@@ -295,7 +293,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr id="idrow1996">
+            <td hidden>123value</td>
             <td>Santi</td>
             <td>Jose Alvarado</td>
             <td>1234567</td>
@@ -308,14 +307,14 @@
               >
             </td>
           </tr>
-          <tr>
+          <tr id="idrow23234">
             <td>Campana</td>
             <td>Freddy Alvarado</td>
             <td>987456</td>
             <td>San Jose tibas</td>
             <td>sobre peso</td>
             <td>
-              <button type="button" id="butTableBorrar">Borrar</button>
+              <button type="button" onclick="borrarExpediente(this)">Borrar</button>
             </td>
             <td>
               <a href="#divformconatiner" type="button" id="butTableActualizar"
@@ -337,7 +336,11 @@
   <script src="/Frontend/js/googleMaps.js"></script>
 
 
+<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
+<script src="/Frontend/js/servicioCloudinay.js"></script>
+
 <script src="https://kit.fontawesome.com/6e5cd7b048.js" crossorigin="anonymous"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="/Frontend/js/adminExpendienteController.js"></script>
+ 
 </html>

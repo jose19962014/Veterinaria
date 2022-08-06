@@ -12,7 +12,7 @@
 #divimagen {
     /* border: 2px solid red; */
     background-color: lightgrey;
-    height: 230px;
+    height: 275px;
     width: 275px;
     transform: translate(-25%, 25%);
     /* background: url(); */
@@ -24,15 +24,17 @@
     justify-content: center;
 }
 
-#labelSelcioneImagen{
-transform: translate(90%, 5%);
+#butSubirImagen {
+    margin-left: 30%;
+    font-size: larger;
 }
+
 
 form {
     /* border: 2px solid red; */
     width: 35%;
     background-color: rgb(204, 235, 199);
-    height: 810px;
+  
     border-radius: 15px;
 }
 

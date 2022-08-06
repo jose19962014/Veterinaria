@@ -17,7 +17,33 @@ let butTableBorrar = document.querySelector('#butTableBorrar');
 
 
 
+
+function borrarPadecimiento(but){
+    but.parentNode.parentNode.remove();
+    
+   
+}
+
+function agregarPadecimientoEnTabla(){
+
+    if('0' != formPadecimientos.value){
+
+        let tbody = document.querySelector('#tablePadecimientos tbody');
+        let row = tbody.insertRow();
+        let cellNombre = row.insertCell();
+        let cellborrar = row.insertCell();
+
+        cellNombre.innerHTML = formPadecimientos.options[formPadecimientos.selectedIndex].text;
+        cellborrar.innerHTML = '<button type="button" onclick="borrarPadecimiento(this)">X</button>';
+    }
+
+};
+
 //funciones del form
+
+function borrarPadecimiento(but){
+    but.parentNode.parentNode.remove();
+}
 
 function limpiarForm(){
     formNombreMascota.value = '';
@@ -148,10 +174,6 @@ function validacionDeData (){
 }
 
 
-///funciones de la tabla
-function getExpedineteById(index){
-    butFormCrear.disabled = true;
-}
 
 
 //botones del form
@@ -172,9 +194,23 @@ butformActualizar.addEventListener("click",function(){
   
 })
 
-// botones de la tabla
 
+
+///funciones de la tabla
+function getExpedineteById(index){
+    butFormCrear.disabled = true;
+}
+
+function borrarExpediente(but){
+    let row = but.parentNode.parentNode.id;
+    console.log(row);
+}
+
+
+// botones de la tabla
 butTableActualizar.addEventListener('click',getExpedineteById)
+
+
 
 
 

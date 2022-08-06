@@ -13,8 +13,8 @@
 
 }
 #divimagen {
-    border: 2px solid red ;
-    height: 230px;
+    border: 2px solid gray ;
+    height: 275px;
     width: 275px;
     transform: translate(-25%, 25%);
     background: url(/imagenes/golden.jpg);
@@ -26,11 +26,15 @@
     justify-content: center;
 }
 
+#butSubirImagen {
+    margin-left: 30%;
+    font-size: larger;
+}
+
 form {
     /* border: 2px solid red; */
     width: 35%;
     background-color: rgb(204, 235, 199);
-    height: 1000px;
     border-radius: 15px;
 }
 
