@@ -23,7 +23,6 @@ const getExpedientes = async()=>{
     return listado;
 }
 
-
 const getExpedientesById = async(_id)=>{
     const params = new URLSearchParams([['_id', _id]]);
     const expediente =  await axios.get('http://localhost:3000/api/buscar-Expediente-id',{params})
@@ -48,7 +47,6 @@ const getExpedientesById = async(_id)=>{
 
     return expediente;
 }
-
         
 const actualizarExpediente = async(_id,NOMBRE_MASCOTA,NOMBRE_DUENO,CEDULA,DIRECCION,LATITUD,LONGITUD,OBSERVACIONES,FOTO)=>{
     await axios({
@@ -163,7 +161,6 @@ const actualizarExpedientePadecimientos = async(_id,arraypadecimientos)=>{
     
 }
 
-
 const crearExpediente = async(NOMBRE_MASCOTA,NOMBRE_DUENO,CEDULA,DIRECCION,LATITUD,LONGITUD,OBSERVACIONES,FOTO)=>{
 
   let resp = await axios({
@@ -206,8 +203,6 @@ const crearExpediente = async(NOMBRE_MASCOTA,NOMBRE_DUENO,CEDULA,DIRECCION,LATIT
       return resp;              
 
 }
-
-
 
 const borrarExpediente = async(_id)=>{
     let params = new URLSearchParams([['_id', _id]]);

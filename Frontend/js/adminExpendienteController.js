@@ -19,8 +19,7 @@ let butTableBorrar = document.querySelector('#butTableBorrar');
 
 
 
-
-
+/// funciones para la tabla del form
 function borrarPadecimiento(but){
     but.parentNode.parentNode.remove();
     
@@ -67,7 +66,6 @@ function agregarPadecimientoEnTabla(){
 
 };
 
-//funciones del form
 
 function borrarPadecimiento(but){
     let idsPadecimientosBorrar =  window.localStorage.getItem("idsPadecimientosBorrar");
@@ -102,6 +100,29 @@ function borrarPadecimiento(but){
     }
     row.remove();
 }
+
+
+/// para llenar el select 
+
+function agregarOptionsSelect(){
+    let conteimetPadecimientos = ['rabia','Azucar','Seguera'];
+
+    let option = document.createElement('option');
+    option.text = 'Selecionar';
+    option.value = 0;
+    formPadecimientos.appendChild(option);
+
+    conteimetPadecimientos.forEach(item=>{
+        let option = document.createElement('option');
+        option.text = item;
+        option.value = item;
+        formPadecimientos.appendChild(option);
+    });
+   
+
+}
+
+//funciones del form
 
 function limpiarForm(){
     formNombreMascota.value = '';
@@ -140,7 +161,7 @@ function alerttexto(texto){
         })
 }
 
-
+//// validaciones
 function  validationJustTextNum(texto){
     const pattern = /^[A-Z0-9\s]+$/gi;
     return  pattern.test(texto);
@@ -424,26 +445,23 @@ function butborrarExpediente(but){
 
            let _id = but.parentNode.parentNode.id;
             borrarExpediente(_id).then((res)=>{
-            Swal.fire({
-            title: 'Expediente borradp',
-            text:  res.msj,
-            icon: 'success'
-            });  
-            getExpedientes()
-            .then((listado)=>{
-                pintarListadoExpedientes(listado)
-            });
+                Swal.fire({
+                title: 'Expediente borradp',
+                text:  res.msj,
+                icon: 'success'
+                });  
+                getExpedientes()
+                .then((listado)=>{
+                    pintarListadoExpedientes(listado)
+                });
+                limpiarForm();
             
         });
         } else if (result.isDenied) {
             Swal.fire('Changes are not saved', '', 'info')
         }
         })
-
-
-
 }
-
 
 function pintarListadoExpedientes(listado){
     let tableRecord =  document.querySelector('#tableRecord');
@@ -501,11 +519,16 @@ function pintarListadoExpedientes(listado){
 ////funcion cuando la pag termina de cargar
 
 window.addEventListener('load',(event)=>{
-   
-    limpiarForm();
+
+   validacionPermisos();  
+   limpiarForm();
+
+    agregarOptionsSelect();
     getExpedientes()
         .then((listado)=>{
             pintarListadoExpedientes(listado)
         });
+    
+
 })
 

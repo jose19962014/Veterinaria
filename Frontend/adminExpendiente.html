@@ -58,14 +58,14 @@
                 <li><a href="/Frontend/contactUs.html">contacto</a></li>
                 
                 <li class="submenu">
-                    <a href="#"> admin</a>
+                    <a id="adminseccion" href="#"> admin</a>
                     <ul class="children">
-                        <li><a href="#">Modificar usuarios </a></li>
-                        <li><a href="/Frontend/adminModificarMascotas.html">Modificar mascotas </a></li>
-                        <li><a href="/Frontend/adminPadecimientos.html">Modificar padecimientos </a></li>
-                        <li><a href="/Frontend/adminExpendiente.html">Modificar expediente </a></li>
-                        <li><a href="/Frontend/adminCitas.html">Modificar citas </a></li>
-                        <li><a href="/Frontend/adminReservaciones.html">Modificar reservaciones </a></li>
+                        <li id="urlusuarios"><a href="#">Modificar usuarios </a></li>
+                        <li id="urlmascotas"><a href="/Frontend/adminModificarMascotas.html">Modificar mascotas </a></li>
+                        <li id="urlpadecimientos"><a href="/Frontend/adminPadecimientos.html">Modificar padecimientos </a></li>
+                        <li id="urlexpediente"><a href="/Frontend/adminExpendiente.html">Modificar expediente </a></li>
+                        <li id="urlcitas"><a href="/Frontend/adminCitas.html">Modificar citas </a></li>
+                        <li id="urlreservaciones"><a href="/Frontend/adminReservaciones.html">Modificar reservaciones </a></li>
                     </ul>
                 </li>
                 
@@ -249,12 +249,7 @@
           </div>
           <!--columna 2 row 7 -->
           <div class="cols">
-            <select id="formPadecimientos" class="cols-input" onchange="agregarPadecimientoEnTabla()">
-              <option value="0">Select</option>
-              <option value="1">Rabia</option>
-              <option value="2">Azucar</option>
-              <option value="3">Seguera</option>
-            </select>
+            <select id="formPadecimientos" class="cols-input" onchange="agregarPadecimientoEnTabla()"></select>
           </div>
         </div>
         <div class="row rowshight">
@@ -301,5 +296,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/Frontend/js/expediente-Servicio.js"></script>
+
+<script src="/Frontend/js/validacionRoles.js"></script>
  
 </html>
