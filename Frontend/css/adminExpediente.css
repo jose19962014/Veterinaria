@@ -15,10 +15,16 @@
 
 #divimagen {
     border: 2px solid gray;
-    height: 275px;
-    width: 275px;
+    height: 350px;
+    width: 300px;
     transform: translate(-25%, 25%);
-    background: url(/imagenes/golden.jpg);
+    /* background: url(/Frontend/imagenes/golden.jpg); */
+}
+
+#contendorImagen{
+        margin: 5%;
+        height: 270px;
+        width: 270px;
 }
 
 #butSubirImagen{

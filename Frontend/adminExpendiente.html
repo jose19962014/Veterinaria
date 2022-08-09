@@ -25,7 +25,7 @@
 
  <header class="header-principal">
         <div class="logo">
-            <img src="/Frontend/imagenes/vet.jpg" alt="">
+            <img  src="/Frontend/imagenes/vet.jpg" alt="">
         </div>
         <div class= "boton">
             <a href= "/Frontend/registro.html"><type="button"><i class="fa-solid fa-house-user"></i></button></a>
@@ -279,51 +279,6 @@
     <!-- ####################################################################################################################################################################################################### -->
     <div class="divTitulo"><h3>Listado de expedientes</h3></div>
     <div id="divcontainertable">
-      <table id="tableRecord">
-        <thead>
-          <tr>
-            <td hidden>id</td>
-            <th>Nombre de mascota</th>
-            <th>Nombre del dueno</th>
-            <th>cedula</th>
-            <th>Direccion</th>
-            <th>Observaciones</th>
-            <th>Borrar</th>
-            <th>Actualizar</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr id="idrow1996">
-            <td hidden>123value</td>
-            <td>Santi</td>
-            <td>Jose Alvarado</td>
-            <td>1234567</td>
-            <td>heredia barva</td>
-            <td>Tiene pulgas</td>
-            <td><button type="button">Borrar</button></td>
-            <td>
-              <a href="#divformconatiner" type="button" id="butTableActualizar"
-                >Actualizar</a
-              >
-            </td>
-          </tr>
-          <tr id="idrow23234">
-            <td>Campana</td>
-            <td>Freddy Alvarado</td>
-            <td>987456</td>
-            <td>San Jose tibas</td>
-            <td>sobre peso</td>
-            <td>
-              <button type="button" onclick="borrarExpediente(this)">Borrar</button>
-            </td>
-            <td>
-              <a href="#divformconatiner" type="button" id="butTableActualizar"
-                >Actualizar</a
-              >
-            </td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   </body>
 
@@ -331,16 +286,20 @@
 <script
       type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXau9ulLu0rWcI0SBtiKoJM_pm4_iyDSM"
-    ></script>
+  ></script>
 
-  <script src="/Frontend/js/googleMaps.js"></script>
+<script src="/Frontend/js/googleMaps.js"></script>
 
 
 <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
 <script src="/Frontend/js/servicioCloudinay.js"></script>
 
 <script src="https://kit.fontawesome.com/6e5cd7b048.js" crossorigin="anonymous"></script>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="/Frontend/js/adminExpendienteController.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/Frontend/js/adminExpendienteController.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/Frontend/js/expediente-Servicio.js"></script>
  
 </html>
