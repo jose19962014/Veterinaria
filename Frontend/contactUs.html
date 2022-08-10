@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="/Frontend/css/reset.css">
     <!-- Tipografías de google -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,32 +16,68 @@
 
     <script src="https://kit.fontawesome.com/6e5cd7b048.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="/Frontend/css/navbar.css">
+    <link rel="stylesheet" href="/Frontend/css/index.css">
+    <link rel="stylesheet" href="/Frontend/css/footer.css" />
     <title>Inicio | Veterinaria</title>
 </head>
 <body>
-    <header class="header-principal">
-
+   
+    
+ <header class="header-principal">
+        
         <div class="logo">
-            <img src="/imagenes/vet.jpg" alt="">
+            <img  src="/Frontend/imagenes/vet.jpg" alt="">
         </div>
-    </header>
-
+        <div class= "boton">
+            <a href= "/Frontend/registro.html"><type="button"><i class="fa-solid fa-house-user"></i></button></a>
+        </div>
+      
+  </header>
 
     <section class="navegar">
-        <div class="menu_bar">
-        </div>
+        <div class="menu_bar"></div>
         <nav>
             <ul>
-                <li><a href= "index.html"> <type="button"><i class="fa-solid fa-house-user"></i></button></a></li>
-                <li><a href= ""> <type="button"><i class="fa-brands fa-square-facebook"></i></button></a></li>
-                <li><a href= ""> <type="button"><i class="fa-brands fa-instagram"></i></button></a></li>
-                <li><a href= ""> <type="button"><i class="fa-brands fa-square-twitter"></i></button></a></li>
+                <li><a href= "/Frontend/index.html"><type="button"><i class="fa-solid fa-house-user"></i></button></a></li>
+            
+                <li class="submenu">
+                    <a href="/Frontend/index.html"><span>Veterinaria<span ></span></a>
+                    <ul class="children">
+                        <li><a href="/Frontend/clienteMascota.html">Mis mascotas </a></li>
+                        <li><a href="/Frontend/clienteNewCita.html">Nueva cita</a></li>
+                    </ul>
+                </li>
+                
+                <li class="submenu">
+                    <a href="/Frontend/clienteHotel.html">Hotel</a>
+                    <ul class="children">
+                        <li><a href="/Frontend/clienteReservacion.html">Reservaciones </a></li>
 
+                    </ul>
+                </li>
+               
+                <li><a href="/Frontend/contactUs.html">contacto</a></li>
+                
+                <li class="submenu">
+                    <a id="adminseccion" href="#"> admin</a>
+                    <ul class="children">
+                        <li id="urlusuarios"><a href="/Frontend/adminUsuarios.html">Modificar usuarios </a></li>
+                        <li id="urlmascotas"><a href="/Frontend/adminModificarMascotas.html">Modificar mascotas </a></li>
+                        <li id="urlpadecimientos"><a href="/Frontend/adminPadecimientos.html">Modificar padecimientos </a></li>
+                        <li id="urlexpediente"><a href="/Frontend/adminExpendiente.html">Modificar expediente </a></li>
+                        <li id="urlcitas"><a href="/Frontend/adminCitas.html">Modificar citas </a></li>
+                        <li id="urlreservaciones"><a href="/Frontend/adminReservaciones.html">Modificar reservaciones </a></li>
+                    </ul>
+                </li>
+                
+                    </ul>
+                </li>
             </ul>
         </nav>
     </section>
+
+
     <section>
         <h3> Veterinaria MOKA</h3>
 
@@ -63,36 +99,105 @@
     
     <section id="sct-formulario">
         <h2> Contact Us </h2>
-        <form action=""id="registro">
-            <div>
-                <label for="txtNombre">Nombre:</label>
-                <input type="text"class="input_frm error" id="txtNombre" required>
+        <form>
+            <!-- row1 -->
+            <div class="row rowshight" style="margin-top: 1%"><label for="formnombre">Nombre</label></div>
+                <input
+                    id="formnombre"
+                    type="text"
+                    class="cols-input"
+                    onchange="validacionformnombre()"
+                    placeholder="EJ:Maria"
+                />
             </div>
-            <div>
-                <label for="txtApellido">Apellido:</label>
-                <input type="text"class="input_frm error" id="txtApellido" required>
+            <!-- row2 -->
+            <div class="row rowshight"><label for="formapellidos">Apellidos</label></div>
+                <input
+                    id="formapellidos"
+                    type="text"
+                    class="cols-input"
+                    onchange="validacionformapellidos()"
+                    Placeholder="EJ: Chinchilla Fallas"
+                />
+             </div>
+          
+
+            <div class="row rowshight"><label for="formtelefono">Teléfono</label></div>
+                <input
+                    id="formtelefono"
+                    type="number"
+                    class="cols-input"
+                    onchange="validacionformtelefono()"
+                    placeholder="EJ:83506996"
+                />
             </div>
-            <div>
-                <label for="txtDireccion">Teléfono:</label>
-                <input type="text"class="input_frm error" id="txtDireccion" required>
+           
+
+            <!-- row5 -->
+            <div class="row rowshight"><label for="formemail">Correo electrónico</label></div>
+                <input
+                    id="formemail"
+                    type="email"
+                    class="cols-input"
+                    onchange="validacionformemail()"
+                    placeholder="EJ: vchinchilla@gmail.com"
+                    multiple
+                    size="64"
+                    maxlength="256"
+                />
             </div>
-            <div>
-                <label for="txtIdentificacion">Correo electrónico:</label>
-                <input type="text"class="input_frm error" id="txtCorreo" required>
+
+   
+             
+            <div class="row rowshight">
+                <button type="button" id="btnregistrar" class="buts">Enviar</button>
             </div>
-                <button id="btn-enviar" type="button">Enviar</button>
-        </form>
+        
+        </div>
+      </form>
     </section>
          
 
     
 
       
-    <footer>
-        <footer class="foot-1"></footer>
-        <h4> copyrigth 2022</h4>
-    </footer>
-</body>
+<footer>
+        <div class="containeFooter">
+            <div class="boxFooter">
+                 <diV class="logo">
+                    <img src="/Frontend/imagenes/vet.jpg" alt="">
+                 </diV>
+            </div>
+
+            <div class="boxFooter">
+                <h3>MOKA</h3>
+                <a href="#">Inicio</a>
+                <a href="#">Veterinaria</a>
+                <a href="#">Hotel</a>
+                <a href="#">Contacto</a>
+                
+            </div>
+
+            <div class="boxFooter">
+                <h3>Servicios</h3>
+                <a href="#">Oftalmología</a>
+                <a href="#">Rehabilitación</a>
+                <a href="#">Eutanasia para mascotas</a>
+                <a href="#">Cremación</a>
+            </div>
+
+            <div class="boxFooter">
+                <h3>Redes Sociales</h3>
+                <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></i>Facebook</a>
+                <a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram"></i>Instagram</a>
+                <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i>YouTube</a>
+                <a href="https://www.tiktok.com/es/"><i class="fa-brands fa-tiktok"></i>>Tiktok</a>
+            </div>
+        </div>
+       
+</footer>
 
 <script src="https://kit.fontawesome.com/6e5cd7b048.js" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/Frontend/js/contactUsController.js"></script>
 </html>

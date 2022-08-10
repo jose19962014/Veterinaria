@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <!-- Tipografías de google -->
+    <link rel="stylesheet" href="/Frontend/css/clienteHotel.css">
     
+    <link rel="stylesheet" href="/Frontend/css/navbar.css">
+    <link rel="stylesheet" href="/Frontend/css/footer.css">
+    <script src="https://kit.fontawesome.com/70fedd1daa.js" crossorigin="anonymous"></script>
+    
+    <!-- Tipografías de google -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
@@ -15,56 +20,59 @@
     <!-- Tipografías de google -->
 
     
-    <link rel="stylesheet" href="/css/navbar.css">
-    <link rel="stylesheet" href="/css/clienteHotel.css">
     
+    
+    <!-- <link rel="styleshrrt" href="/veterinaria/css/general.css" -->
     <title>Inicio | Hotel</title>
 </head>
 
 <body>
-        <header class="header-principal">
+
+
+ <header class="header-principal">
+        
         <div class="logo">
-            <img src="imagenes/vet.jpg" alt="">
+            <img  src="/Frontend/imagenes/vet.jpg" alt="">
         </div>
         <div class= "boton">
-            <a href= "registro.html"><type="button"><i class="fa-solid fa-house-user"></i></button></a>
+            <a href= "/Frontend/registro.html"><type="button"><i class="fa-solid fa-house-user"></i></button></a>
         </div>
       
-    </header>
+  </header>
 
     <section class="navegar">
         <div class="menu_bar"></div>
         <nav>
             <ul>
-                <li><a href= "index.html"><type="button"><i class="fa-solid fa-house-user"></i></button></a></li>
+                <li><a href= "/Frontend/index.html"><type="button"><i class="fa-solid fa-house-user"></i></button></a></li>
             
                 <li class="submenu">
-                    <a href="/index.html"><span>Veterinaria<span ></span></a>
+                    <a href="/Frontend/index.html"><span>Veterinaria<span ></span></a>
                     <ul class="children">
-                        <li><a href="/clienteMascota.html">Mis mascotas </a></li>
-                        <li><a href="/clienteNewCita.html">Nueva cita</a></li>
+                        <li><a href="/Frontend/clienteMascota.html">Mis mascotas </a></li>
+                        <li><a href="/Frontend/clienteNewCita.html">Nueva cita</a></li>
                     </ul>
                 </li>
                 
                 <li class="submenu">
-                    <a href="/clienteHotel.html">Hotel</a>
+                    <a href="/Frontend/clienteHotel.html">Hotel</a>
                     <ul class="children">
-                        <li><a href="/clienteReservacion.html">Reservaciones </a></li>
+                        <li><a href="/Frontend/clienteReservacion.html">Reservaciones </a></li>
 
                     </ul>
                 </li>
                
-                <li><a href="contactUs.html">contacto</a></li>
+                <li><a href="/Frontend/contactUs.html">contacto</a></li>
                 
                 <li class="submenu">
-                    <a href="#"> admin</a>
+                    <a id="adminseccion" href="#"> admin</a>
                     <ul class="children">
-                        <li><a href="/adminUsuarios.html">Modificar usuarios </a></li>
-                        <li><a href="/adminModificarMascotas.html">Modificar mascotas </a></li>
-                        <li><a href="/adminPadecimientos.html">Modificar padecimientos </a></li>
-                        <li><a href="/adminExpendiente.html">Modificar expediente </a></li>
-                        <li><a href="/adminCitas.html">Modificar citas </a></li>
-                        <li><a href="/adminReservaciones.html">Modificar reservaciones </a></li>
+                        <li id="urlusuarios"><a href="/Frontend/adminUsuarios.html">Modificar usuarios </a></li>
+                        <li id="urlmascotas"><a href="/Frontend/adminModificarMascotas.html">Modificar mascotas </a></li>
+                        <li id="urlpadecimientos"><a href="/Frontend/adminPadecimientos.html">Modificar padecimientos </a></li>
+                        <li id="urlexpediente"><a href="/Frontend/adminExpendiente.html">Modificar expediente </a></li>
+                        <li id="urlcitas"><a href="/Frontend/adminCitas.html">Modificar citas </a></li>
+                        <li id="urlreservaciones"><a href="/Frontend/adminReservaciones.html">Modificar reservaciones </a></li>
                     </ul>
                 </li>
                 
@@ -74,33 +82,72 @@
         </nav>
     </section>
 
+
+
+        <div>
+            <h1 id="tituloHotel">MOKA HOTEL</h1>
+        </div>
+
     <section class="sct-bannerHotel">
         
-            <a href="/clienteReservacion.html"><button class="buttonReser" type="button">Hacer reservaciones</button> </a>
+
+         
+         <a href="/Frontend/clienteReservacion.html"><button class="buttonReser" type="button">Hacer reservaciones</button> </a>
             
                         
         
     </section>
     <section id="sct-reviews">
-            <h3>Moka Hotel</h3>
-            <p id="infoHotel">Nuestro hotel para mascotas  ofrece un ambiente limpio y seguro donde los animales pueden permanecer por un tiempo,     durante el día o la noche. Hay una amplia gama de servicios que se ofrecen en  Moka Hotel, que incluyen desayuno para mascotas, refrigerios para mascotas, peluquería canina (o grooming canino) y otras comodidades. La mejor parte de MokaHotel que tiene un área al aire libre donde las mascotas pueden jugar y divertirse.
+            
+            <p id="infoHotel">Nuestro hotel para mascotas  ofrece un ambiente limpio y seguro donde los animales pueden permanecer por un tiempo,     durante el día o la noche. Hay una amplia gama de servicios que se ofrecen en  Moka Hotel, que incluyen desayuno para mascotas, refrigerios para mascotas, peluquería canina (o grooming canino) y otras comodidades. La mejor parte de Medipet es que tiene un área al aire libre donde las mascotas pueden jugar y divertirse.
             Entonces la idea fue proporcionarle a su perro un sitio confortable y muy seguro, a parte de atractivo e ideal para que pase la temporada de vacaciones, hasta que vuelva a casa.
                 
-            Así, todo lo que realizamos en Moka Hotel ha sido pensado desde la perspectiva del propio perro para brindarle todo aquello que le resulta agradable, imprescindible o divertido. Estamos muy satisfechos de dedicar el tiempo necesario a saber cómo es cada mascota, que les gusta, y qué no les gusta, por qué se comportan y de qué forma podemos cubrir sus deseos.</p>
+            Así, todo lo que realizamos en Moca Hotel ha sido pensado desde la perspectiva del propio perro para brindarle todo aquello que le resulta agradable, imprescindible o divertido. Estamos muy satisfechos de dedicar el tiempo necesario a saber cómo es cada mascota, que les gusta, y qué no les gusta, por qué se comportan y de qué forma podemos cubrir sus deseos.</p>
             <br/>
             <br/>
             <br/>
             <br/>
             <br/>
-            
-            
+    
     </section>
    
     
     <footer>
+        <div class="containeFooter">
+            <div class="boxFooter">
+                 <diV class="logo">
+                    <img src="/Frontend/imagenes/vet.jpg" alt="">
+                 </diV>
+            </div>
+
+            <div class="boxFooter">
+                <h3>MOKA</h3>
+                <a href="#">Inicio</a>
+                <a href="#">Veterinaria</a>
+                <a href="#">Hotel</a>
+                <a href="#">Contacto</a>
+                
+            </div>
+
+            <div class="boxFooter">
+                <h3>Servicios</h3>
+                <a href="#">Oftalmología</a>
+                <a href="#">Rehabilitación</a>
+                <a href="#">Eutanasia para mascotas</a>
+                <a href="#">Cremación</a>
+            </div>
+
+            <div class="boxFooter">
+                <h3>Redes Sociales</h3>
+                <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></i>Facebook</a>
+                <a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram"></i>Instagram</a>
+                <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i>YouTube</a>
+                <a href="https://www.tiktok.com/es/"><i class="fa-brands fa-tiktok"></i>>Tiktok</a>
+            </div>
+        </div>
        
-    </footer>
+</footer>
 </body>
 
-<script src="https://kit.fontawesome.com/6e5cd7b048.js" crossorigin="anonymous"></script>
+
 </html>

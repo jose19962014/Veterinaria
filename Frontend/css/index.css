@@ -1,33 +1,42 @@
 * {
-    padding:0;
-    margin:0;
+    font-family: 'Asap', sans-serif;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-body {
+/* body {
     font-family: 'Oswald', sans-serif;
     font-size: 18px;
+} */
+* {
+    font-family: 'Asap', sans-serif;
+
 }
 
 
-footer{
+/* footer {
     background: #61b6e4;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     min-height: 50px;
     padding: 0%;
     align-items: center;
     width: 100%;
     font-size: 10px;
-}
+} */
 
 
 
 
 .sct-banner {
-    background-image: url("/imagenes/animal.jpg");
+    background-image: url("/Frontend/imagenes/animal.jpg");
     background-size: cover;
     display: flex;
     min-height: 700px;
@@ -37,7 +46,7 @@ footer{
 }
 
 
-h1{
+h1 {
     color: rgb(7, 43, 65);
     font-size: 15px;
     font-weight: bold;
@@ -46,28 +55,32 @@ h1{
 }
 
 
-#sct-formulario{
+#sct-formulario {
     flex-direction: column;
     padding: 75px;
     font-size: 25px;
     display: flex;
 
 }
-label{
+
+label {
     display: block;
     font-size: 20px;
     font-weight: bold;
     margin: 0px 0px 15px 50px;
     height: 26px;
 }
-input, select{
+
+input,
+select {
     width: 80%;
-    height: 26px;
+    height: 506px;
     margin: 0px 0px 15px 30px;
     border: none;
     border-radius: 5px;
 }
-#btn-registrar{
+
+#btnregistrar {
     background: #a6e1f4;
     border: 2px solid #4ca3bd;
     color: rgb(5, 61, 59);
@@ -79,11 +92,30 @@ input, select{
     display: block;
 }
 
-#btn-registrar:hover {
+#btnregistrar:hover {
     background-color: #174944;
 }
-#btn-1{
-    background:  none;
+
+
+#butFormCancel {
+    background: #a6e1f4;
+    border: 2px solid #4ca3bd;
+    color: rgb(5, 61, 59);
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 500px;
+    padding: 15px;
+    border-radius: 2px;
+    font-size: 20px;
+    display: block;
+}
+
+#butFormCancel:hover {
+    background-color: #174944;
+}
+
+#btn-1 {
+    background: none;
     border: 2px solid #81c5ec;
     color: #fff;
     cursor: pointer;
@@ -91,6 +123,7 @@ input, select{
     border-radius: 2px;
     font-size: 17px;
 }
+
 #btn-1:hover {
     background-color: #1658c3;
 }
@@ -104,7 +137,8 @@ input, select{
     font-weight: bold;
     text-align: center;
 }
-h3{
+
+h3 {
     color: rgb(15, 85, 129);
     font-size: 25px;
     font-weight: bold;
@@ -113,7 +147,7 @@ h3{
     text-align: center;
 }
 
-h2{
+h2 {
     color: rgb(7, 43, 65);
     font-size: 20px;
     font-weight: bold;
@@ -129,18 +163,21 @@ p {
 }
 
 
-h2{
+h2 {
     text-decoration: underline;
     text-align: center;
 }
-#sct-formulario{
+
+#sct-formulario {
     width: 500px;
     height: 700px;
-    display:flex;
+    display: flex;
     flex-direction: column;
     border: #80dad1;
 }
-input, select{
+
+input,
+select {
     width: 40%;
     height: 26px;
     margin: 0px 0px 15px 30px;
@@ -148,7 +185,8 @@ input, select{
     border-radius: 5px;
     background-color: #7cbdd7;
 }
-#btn-enviar{
+
+#btn-enviar {
     width: 120px;
     height: 50px;
     font-size: 14px;
@@ -170,12 +208,11 @@ input, select{
     padding: 100px;
     border: #80dad1;
     flex: auto;
-  }
-  
-  .fila::after {
+}
+
+.fila::after {
     content: "";
     clear: both;
     display: table;
     align-content: center;
-  }
-
+}

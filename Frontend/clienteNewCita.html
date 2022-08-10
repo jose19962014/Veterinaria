@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="/Frontend/css/clienteNewCita.css" />
     <link rel="stylesheet" href="/Frontend/css/navbar.css" />
+    <link rel="stylesheet" href="/Frontend/css/footer.css" />
     <link rel="stylesheet" href="/Frontend/css/googleMaps.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,17 +17,17 @@
       rel="stylesheet"
     />
   </head>
-  <body>
-    
-        <header class="header-principal">
+  
+ <header class="header-principal">
+        
         <div class="logo">
-            <img src="/Frontend/imagenes/vet.jpg" alt="">
+            <img  src="/Frontend/imagenes/vet.jpg" alt="">
         </div>
         <div class= "boton">
             <a href= "/Frontend/registro.html"><type="button"><i class="fa-solid fa-house-user"></i></button></a>
         </div>
       
-    </header>
+  </header>
 
     <section class="navegar">
         <div class="menu_bar"></div>
@@ -35,9 +36,9 @@
                 <li><a href= "/Frontend/index.html"><type="button"><i class="fa-solid fa-house-user"></i></button></a></li>
             
                 <li class="submenu">
-                    <a href="/Frontend//index.html"><span>Veterinaria<span ></span></a>
+                    <a href="/Frontend/index.html"><span>Veterinaria<span ></span></a>
                     <ul class="children">
-                        <li><a href="/Frontend/clienteMascota.html">Mis mascotas</a></li>
+                        <li><a href="/Frontend/clienteMascota.html">Mis mascotas </a></li>
                         <li><a href="/Frontend/clienteNewCita.html">Nueva cita</a></li>
                     </ul>
                 </li>
@@ -53,14 +54,14 @@
                 <li><a href="/Frontend/contactUs.html">contacto</a></li>
                 
                 <li class="submenu">
-                    <a href="#"> admin</a>
+                    <a id="adminseccion" href="#"> admin</a>
                     <ul class="children">
-                        <li><a href="/Frontend/adminUsuarios.html">Modificar usuarios </a></li>
-                        <li><a href="/Frontend/adminModificarMascotas.html">Modificar mascotas </a></li>
-                        <li><a href="/Frontend/adminPadecimientos.html">Modificar padecimientos </a></li>
-                        <li><a href="/Frontend/adminExpendiente.html">Modificar expediente </a></li>
-                        <li><a href="/Frontend/adminCitas.html">Modificar citas </a></li>
-                        <li><a href="/Frontend/adminReservaciones.html">Modificar reservaciones </a></li>
+                        <li id="urlusuarios"><a href="/Frontend/adminUsuarios.html">Modificar usuarios </a></li>
+                        <li id="urlmascotas"><a href="/Frontend/adminModificarMascotas.html">Modificar mascotas </a></li>
+                        <li id="urlpadecimientos"><a href="/Frontend/adminPadecimientos.html">Modificar padecimientos </a></li>
+                        <li id="urlexpediente"><a href="/Frontend/adminExpendiente.html">Modificar expediente </a></li>
+                        <li id="urlcitas"><a href="/Frontend/adminCitas.html">Modificar citas </a></li>
+                        <li id="urlreservaciones"><a href="/Frontend/adminReservaciones.html">Modificar reservaciones </a></li>
                     </ul>
                 </li>
                 
@@ -69,6 +70,7 @@
             </ul>
         </nav>
     </section>
+
   
      <div class="divTitulo"><h3>Formulario para crear cita</h3></div>
     <!-- div de cuestionario -->
@@ -214,10 +216,44 @@
         </div>
       </form>
     </div>
-    <!-- ####################################################################################################################################################################################################### -->
-    <!-- <hr style="margin: 2%" /> -->
-    <!-- ####################################################################################################################################################################################################### -->
+
     
+<footer>
+        <div class="containeFooter">
+            <div class="boxFooter">
+                 <diV class="logo">
+                    <img src="/Frontend/imagenes/vet.jpg" alt="">
+                 </diV>
+            </div>
+
+            <div class="boxFooter">
+                <h3>MOKA</h3>
+                <a href="#">Inicio</a>
+                <a href="#">Veterinaria</a>
+                <a href="#">Hotel</a>
+                <a href="#">Contacto</a>
+                
+            </div>
+
+            <div class="boxFooter">
+                <h3>Servicios</h3>
+                <a href="#">Oftalmología</a>
+                <a href="#">Rehabilitación</a>
+                <a href="#">Eutanasia para mascotas</a>
+                <a href="#">Cremación</a>
+            </div>
+
+            <div class="boxFooter">
+                <h3>Redes Sociales</h3>
+                <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></i>Facebook</a>
+                <a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram"></i>Instagram</a>
+                <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i>YouTube</a>
+                <a href="https://www.tiktok.com/es/"><i class="fa-brands fa-tiktok"></i>>Tiktok</a>
+            </div>
+        </div>
+       
+</footer>
+
   </body>
 
 

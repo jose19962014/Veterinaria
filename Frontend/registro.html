@@ -17,61 +17,202 @@
     <script src="https://kit.fontawesome.com/6e5cd7b048.js" crossorigin="anonymous"></script>
 
 
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="/Frontend/css/navbar.css">
+    <link rel="stylesheet" href="/Frontend/css/index.css">
+    <link rel="stylesheet" href="/Frontend/css/footer.css" />
     <title>Inicio | Veterinaria</title>
 </head>
 
 <body>
-    <header class="header-principal">
 
+ <header class="header-principal">
+        
         <div class="logo">
-            <img src="imagenes/vet.jpg" alt="">
+            <img  src="/Frontend/imagenes/vet.jpg" alt="">
         </div>
-
-
-    </header>
+        <div class= "boton">
+            <a href= "/Frontend/registro.html"><type="button"><i class="fa-solid fa-house-user"></i></button></a>
+        </div>
+      
+  </header>
 
     <section class="navegar">
-        <div class="menu_bar">
-        </div>
+        <div class="menu_bar"></div>
         <nav>
             <ul>
-                <li><a href= "index.html"><type="button"><i class="fa-solid fa-house-user"></i></button></a></li>
-                <li><a href="#">contacto</a></li>
+                <li><a href= "/Frontend/index.html"><type="button"><i class="fa-solid fa-house-user"></i></button></a></li>
+            
+                <li class="submenu">
+                    <a href="/Frontend/index.html"><span>Veterinaria<span ></span></a>
+                    <ul class="children">
+                        <li><a href="/Frontend/clienteMascota.html">Mis mascotas </a></li>
+                        <li><a href="/Frontend/clienteNewCita.html">Nueva cita</a></li>
+                    </ul>
+                </li>
+                
+                <li class="submenu">
+                    <a href="/Frontend/clienteHotel.html">Hotel</a>
+                    <ul class="children">
+                        <li><a href="/Frontend/clienteReservacion.html">Reservaciones </a></li>
+
+                    </ul>
+                </li>
+               
+                <li><a href="/Frontend/contactUs.html">contacto</a></li>
+                
+                <li class="submenu">
+                    <a id="adminseccion" href="#"> admin</a>
+                    <ul class="children">
+                        <li id="urlusuarios"><a href="/Frontend/adminUsuarios.html">Modificar usuarios </a></li>
+                        <li id="urlmascotas"><a href="/Frontend/adminModificarMascotas.html">Modificar mascotas </a></li>
+                        <li id="urlpadecimientos"><a href="/Frontend/adminPadecimientos.html">Modificar padecimientos </a></li>
+                        <li id="urlexpediente"><a href="/Frontend/adminExpendiente.html">Modificar expediente </a></li>
+                        <li id="urlcitas"><a href="/Frontend/adminCitas.html">Modificar citas </a></li>
+                        <li id="urlreservaciones"><a href="/Frontend/adminReservaciones.html">Modificar reservaciones </a></li>
+                    </ul>
+                </li>
+                
+                    </ul>
+                </li>
             </ul>
         </nav>
     </section>
 
-    <section class="sct-banner">
-        <section id="sct-formulario">
-            <h4>Formulario Registro</h4>
-                <form action=""id="registro">
-                    <label for="nombre"><b>Nombre</b></label>
-                    <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese su Nombre">
-                    <label for="apellidos"><b>Apellidos</b></label>
-                    <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
-                    <label for="cédula"><b>Cédula</b></label>
-                    <input class="controls" type="number" name="cédula" id="cédula" placeholder="Ingrese su cédula">
-                    <label for="dirección"><b>Dirección</b></label>
-                    <input class="controls" type="text" name="dirección" id="Direccion exacta" placeholder="Ingrese su direcccion: Provincia-canton-distrito-senas exactas">
-                    <label for="email"><b>Correo electrónico</b></label>
-                    <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
-                    <label for="password"><b>Contraseña</b></label>
-                    <input class="controls" type="password" name="correo" id="correo" placeholder="Ingrese su Contraseña">
-                    <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
-                    <input class="botons" type="submit" value="Registrar">
-                    <p><a href="#">¿Ya tengo Cuenta?</a></p>
-                </form>
-        </section>
-    </section>
+
+
+    <div class="divTitulo"><h3>Formulario de registro</h3></div>
+    <!-- div de formulario -->
+    <div id="divformconatiner">
+      
+        <form>
+            <!-- row1 -->
+            <div class="row rowshight" style="margin-top: 1%"><label for="formnombre">Nombre</label></div>
+                <input
+                    id="formnombre"
+                    type="text"
+                    class="cols-input"
+                    onchange="validacionformnombre()"
+                    placeholder="EJ:Maria"
+                />
+            </div>
+            <!-- row2 -->
+            <div class="row rowshight"><label for="formapellidos">Apellidos</label></div>
+                <input
+                    id="formapellidos"
+                    type="text"
+                    class="cols-input"
+                    onchange="validacionformapellidos()"
+                    Placeholder="EJ: Chinchilla Fallas"
+                />
+             </div>
+            <!-- row3 -->
+            <div class="row rowshight"><label for="formcedula">Cédula</label></div>
+                <input
+                    id="formcedula"
+                    type="text"
+                    class="cols-input"
+                    onchange="validacionformcedula()"
+                    placeholder="EJ:5-0555-0444 (ingrese los guiones según corresponda)"
+                />
+            </div>
+
+            <div class="row rowshight"><label for="formtelefono">Teléfono</label></div>
+                <input
+                    id="formtelefono"
+                    type="number"
+                    class="cols-input"
+                    onchange="validacionformtelefono()"
+                    placeholder="EJ:83506996"
+                />
+            </div>
+            <!-- row4 -->
+            <div class="row rowshight"><label for="formdireccion">Dirección</label></div>
+                <input
+                    id="formdireccion"
+                    type="text"
+                    class="cols-input"
+                    onchange="validacionformdireccion()"
+                    placeholder="EJ:Heredia Barva Barva"
+                />
+            </div>
+
+            <!-- row5 -->
+            <div class="row rowshight"><label for="formemail">Correo electrónico</label></div>
+                <input
+                    id="formemail"
+                    type="email"
+                    class="cols-input"
+                    onchange="validacionformemail()"
+                    placeholder="EJ: vchinchilla@gmail.com"
+                    multiple
+                    size="64"
+                    maxlength="256"
+                />
+            </div>
+
+
+         <!-- row6 -->
+            <div class="row rowshight"><label for="formpassword">Contraseña</label></div>
+                <input
+                    id="formpassword"
+                    type="password"
+                    class="cols-input"
+                    onchange="validacionformpassword()"
+                    placeholder=""
+                />
+            </div>
+        
+   
+             
+            <div class="row rowshight">
+                <button type="button" id="btnregistrar" class="buts">Registrar</button>
+            </div>
+        
+        </div>
+      </form>
+    </div>
+               
 
   
-    <footer>
-        <footer class="foot-1"></footer>
-        <h4> copyrigth 2022</h4>
-    </footer>
+<footer>
+        <div class="containeFooter">
+            <div class="boxFooter">
+                 <diV class="logo">
+                    <img src="/Frontend/imagenes/vet.jpg" alt="">
+                 </diV>
+            </div>
+
+            <div class="boxFooter">
+                <h3>MOKA</h3>
+                <a href="#">Inicio</a>
+                <a href="#">Veterinaria</a>
+                <a href="#">Hotel</a>
+                <a href="#">Contacto</a>
+                
+            </div>
+
+            <div class="boxFooter">
+                <h3>Servicios</h3>
+                <a href="#">Oftalmología</a>
+                <a href="#">Rehabilitación</a>
+                <a href="#">Eutanasia para mascotas</a>
+                <a href="#">Cremación</a>
+            </div>
+
+            <div class="boxFooter">
+                <h3>Redes Sociales</h3>
+                <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></i>Facebook</a>
+                <a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram"></i>Instagram</a>
+                <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i>YouTube</a>
+                <a href="https://www.tiktok.com/es/"><i class="fa-brands fa-tiktok"></i>>Tiktok</a>
+            </div>
+        </div>
+       
+</footer>
 </body>
 
 <script src="https://kit.fontawesome.com/6e5cd7b048.js" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/Frontend/js/registroController.js"></script>
+
 </html>
