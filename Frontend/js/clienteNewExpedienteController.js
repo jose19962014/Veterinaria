@@ -2,12 +2,11 @@ let formNombreMascota = document.querySelector('#formNombreMascota');
 let formNombreDueño = document.querySelector('#formNombreDueño');
 let formCedula = document.querySelector('#formCedula');
 let formDireccion = document.querySelector('#formDireccion');
-
-
+let formLatitud = document.querySelector('#txtLat');
+let formLongitud = document.querySelector('#txtLng');
 let butFormCrear = document.querySelector('#butFormCrear');
-
 let formbutFormCancel = document.querySelector("#butFormCancel");
-
+let formcontendorImagen = document.querySelector('#contendorImagen');
 
 
 
@@ -27,19 +26,21 @@ function  validationJustTextNum(texto){
     const pattern = /^[A-Z0-9\s]+$/gi;
     return  pattern.test(texto);
 }
-
+ 
 function  validationJustCedula(numero){
-   const pattern = /(\d{1}-\d{1,4}-\d{1,4})+$/g;
-    return pattern.test(numero);;
+//   const pattern = /(\d{1}-\d{1,4}-\d{1,4})+$/g;
+     const pattern = /(\d{1}-\d{4}-\d{4})+$/g;
+    return  pattern.test(numero);
 }
 
 function limpiarForm(){
     formNombreMascota.value = '';
     formNombreDueño.value = '';
     formCedula.value = '';
-    formObservaciones.value = '';
     formDireccion.value = '';
-    formPadecimientos.value = 0; 
+    formLatitud.value = '';
+    formLongitud.value = '';
+    formcontendorImagen.src = '';
   
     formNombreMascota.style.borderColor = 'white';
     formNombreDueño.style.borderColor = 'white';
@@ -48,7 +49,6 @@ function limpiarForm(){
     formDireccion.style.borderColor = 'white';
     formPadecimientos.style.borderColor = 'white';
 
-    butFormCrear.disabled = false;
 }
 
 
@@ -61,6 +61,7 @@ function validacionNombreMascota(){
     }
     else{
         formNombreMascota.style.borderColor = 'palegreen';
+         return true;
     }
 }
 
@@ -73,6 +74,7 @@ function validacionNombreDueno(){
     } 
     else{
         formNombreDueño.style.borderColor = 'palegreen';
+         return true;
     }
 }
 
@@ -86,6 +88,7 @@ function validacionCedula(){
  
     else{
         formCedula.style.borderColor = 'palegreen';
+         return true;
     }
 }
 
@@ -100,6 +103,7 @@ if(!validationJustTextNum(textformDireccion)){
  
     else{
         formDireccion.style.borderColor = 'palegreen';
+         return true;
     }
 }
 
@@ -108,10 +112,16 @@ if(!validationJustTextNum(textformDireccion)){
 function validacionDeData (){
 
 
-    validacionNombreMascota();
-    validacionNombreDueno();
-    validacionCedula();
-    validacionDireccion();
+ if(validacionNombreMascota()){
+        if(validacionNombreDueno()){
+            if(validacionCedula()){
+                if(validacionDireccion()){
+                        return true
+                }else{return false;}
+            }else{return false;}
+        }else{return false;}
+    }else{return false;}
+
         
 }
 
@@ -125,12 +135,36 @@ function getExpedineteById(index){
 //botones del form
 
 formbutFormCancel.addEventListener('click',function(){
+    limpiarForm();
     window.location.href="/clienteMascota.html";
 });
 
 
 butFormCrear.addEventListener("click",function(){
-    validacionDeData();
+
+    if(validacionDeData()){
+
+        crearExpediente(
+                    formNombreMascota.value,
+                    formNombreDueño.value,
+                    formCedula.value ,
+                    formDireccion.value,
+                    formLatitud.value,
+                    formLongitud.value ,
+                    formcontendorImagen.src
+
+                ).
+                then(expediente=>{
+                        Swal.fire({
+                        title: 'Registro exitoso',
+                        text: expediente.msj,
+                        icon: 'success'
+                        });  
+
+                });
+
+        }
+
 })
 
 

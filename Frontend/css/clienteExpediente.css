@@ -8,22 +8,30 @@
     justify-content: center;
 }
 
-#divimagenconteiner {
+/* #divimagenconteiner {
     border: 2px solid blue ;
 
-}
+} */
+
 #divimagen {
-    border: 2px solid gray ;
-    height: 275px;
-    width: 275px;
+    border: 2px solid gray;
+    height: 350px;
+    width: 300px;
     transform: translate(-25%, 25%);
-    background: url(/imagenes/golden.jpg);
+    /* background: url(/Frontend/imagenes/golden.jpg); */
 }
 
 #divformconatiner {
     /* border: 2px solid blue ; */
     display: flex;
     justify-content: center;
+}
+
+
+#contendorImagen {
+    margin: 5%;
+    height: 270px;
+    width: 270px;
 }
 
 #butSubirImagen {

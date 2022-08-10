@@ -4,6 +4,11 @@ let formDireccion = document.querySelector('#formDireccion');
 let formCedula = document.querySelector('#formCedula');
 let formNombreDueño = document.querySelector('#formNombreDueño');
 let formNombreMascota = document.querySelector('#formNombreMascota');
+
+let formLatitud = document.querySelector('#txtLat');
+let formLongitud = document.querySelector('#txtLng');
+let formcontendorImagen = document.querySelector('#contendorImagen');
+
 //botones
 let butformActualizar = document.querySelector('#butFormActualizar');
 let formbutFormCancel = document.querySelector("#butFormCancel");
@@ -28,8 +33,9 @@ function  validationJustTextNum(texto){
 
 
 function  validationJustCedula(numero){
-   const pattern = /(\d{1}-\d{1,4}-\d{1,4})+$/g;
-    return pattern.test(numero);;
+//   const pattern = /(\d{1}-\d{1,4}-\d{1,4})+$/g;
+     const pattern = /(\d{1}-\d{4}-\d{4})+$/g;
+    return  pattern.test(numero);
 }
 
 function limpiarForm(){
@@ -63,8 +69,10 @@ function validacionNombreMascota(){
     }
     else{
         formNombreMascota.style.borderColor = 'palegreen';
+         return true;
     }
 }
+
 
 function validacionNombreDueno(){
     let textformNombreDueño = formNombreDueño.value;
@@ -75,6 +83,7 @@ function validacionNombreDueno(){
     } 
     else{
         formNombreDueño.style.borderColor = 'palegreen';
+        return true;
     }
 }
 
@@ -89,6 +98,7 @@ function validacionCedula(){
  
     else{
         formCedula.style.borderColor = 'palegreen';
+        return true;
     }
 }
 
@@ -103,25 +113,49 @@ if(!validationJustTextNum(textformDireccion)){
  
     else{
         formDireccion.style.borderColor = 'palegreen';
+        return true;
+        
     }
 }
 
 
 
-
-
-
 function validacionDeData (){
-    validacionNombreMascota();
-    validacionNombreDueno();
-    validacionCedula();
-    validacionDireccion();
+
+
+   
+    if(validacionNombreMascota()){
+        if(validacionNombreDueno()){
+            if(validacionCedula()){
+                if(validacionDireccion()){
+                        return true
+                }else{return false;}
+            }else{return false;}
+        }else{return false;}
+    }else{return false;}
+
 }
 
 
+butformActualizar.addEventListener("click",function(){
 
-butformActualizar.addEventListener('click',function(){
-    validacionDeData();
+    let _id =   window.localStorage.getItem("idExpediente");
+   
+    if(validacionDeData()){
+       actualizarExpediente(
+            _id,
+            formNombreMascota.value,
+            formNombreDueño.value,
+            formCedula.value ,
+            formDireccion.value,
+            formLatitud.value,
+            formLongitud.value ,
+            formcontendorImagen.src
+
+        );
+        
+    }
+
 });
 
 formbutFormCancel.addEventListener('click',function(){

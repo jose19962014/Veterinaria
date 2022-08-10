@@ -168,9 +168,11 @@ function  validationJustTextNum(texto){
 }
 
 function  validationJustCedula(numero){
-   const pattern = /(\d{1}-\d{1,4}-\d{1,4})+$/g;
-    return pattern.test(numero);;
+//   const pattern = /(\d{1}-\d{1,4}-\d{1,4})+$/g;
+     const pattern = /(\d{1}-\d{4}-\d{4})+$/g;
+    return  pattern.test(numero);
 }
+
 
 function validacionNombreMascota(){
      let textformNombreMascota = formNombreMascota.value;
@@ -320,15 +322,6 @@ butFormCrear.addEventListener("click",function(){
 
     }
 
-
-
-    
-
-
-
-
-   
-    
 })
 
 
