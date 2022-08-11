@@ -1,6 +1,6 @@
 const getExpedientes = async()=>{
 
-   const listado =  await axios.get('http://localhost:3000/api/listar')
+   const listado =  await axios.get('http://localhost:3000/api/listar-expediente')
     .then((res)=> {
        if(res.data.resultado == false){
         
@@ -165,7 +165,7 @@ const crearExpediente = async(NOMBRE_MASCOTA,NOMBRE_DUENO,CEDULA,DIRECCION,LATIT
 
   let resp = await axios({
                         method:'post',
-                        url: 'http://localhost:3000/api/registrar',
+                        url: 'http://localhost:3000/api/registrar-expediente',
                         responseType: 'json',
                         data:{
                             NOMBRE_MASCOTA : NOMBRE_MASCOTA ,

@@ -5,6 +5,10 @@ let formCedula = document.querySelector('#formCedula');
 let formDireccion = document.querySelector('#formDireccion');
 let formDoctor = document.querySelector('#formDoctor');
 let formFechaIngreso = document.querySelector('#formFechaIngreso');
+let formLatitud = document.querySelector('#txtLat');
+let formLongitud = document.querySelector('#txtLng');
+
+
 //botones
 let butformActualizar = document.querySelector('#butFormActualizar');
 let butFormCrear = document.querySelector('#butFormCrear');
@@ -178,7 +182,7 @@ function getExpedineteById(index){
 butFormCancel.addEventListener('click',function(){
 
     limpiarForm();  
-    window.location.href = "/index.html";
+   // window.location.href = "/index.html";
 })
 
 butFormCrear.addEventListener("click",function(){
@@ -202,7 +206,18 @@ butFormCrear.addEventListener("click",function(){
         reverseButtons: true
         }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href = "/pantallaPago.html"
+            crearCita(
+            formNombreMascota.value,
+            formNombreDueño.value,
+            formCedula.value,
+            formDireccion.value,
+            formLatitud.value,
+            formLongitud.value,
+            formDoctor.options[formDoctor.selectedIndex].text,
+            formFechaIngreso.value,
+           
+            )
+            window.location.href = "/Frontend/pantallaPago.html"
         } else if (
             result.dismiss === Swal.DismissReason.cancel
         ) {

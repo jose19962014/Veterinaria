@@ -451,7 +451,7 @@ function butborrarExpediente(but){
             
         });
         } else if (result.isDenied) {
-            Swal.fire('Changes are not saved', '', 'info')
+            Swal.fire('No se realizo ningun cambio', '', 'info')
         }
         })
 }

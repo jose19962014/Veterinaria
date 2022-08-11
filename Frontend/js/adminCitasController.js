@@ -5,6 +5,9 @@ let formCedula = document.querySelector('#formCedula');
 let formDireccion = document.querySelector('#formDireccion');
 let formDoctor = document.querySelector('#formDoctor');
 let formFechaIngreso = document.querySelector('#formFechaIngreso');
+let formLatitud = document.querySelector('#txtLat');
+let formLongitud = document.querySelector('#txtLng');
+let formSelectCalificacion = document.querySelector('#selectCalificacion');
 //botones
 let butformActualizar = document.querySelector('#butFormActualizar');
 let butFormCrear = document.querySelector('#butFormCrear');
@@ -47,6 +50,10 @@ function limpiarForm(){
     formDireccion.value = '';
     formDoctor.value = 0;
     formFechaIngreso.value = "";
+    formLatitud.value = "";
+    formLongitud.value = "";
+    formSelectCalificacion.value = 0;
+    window.localStorage.removeItem("idCita");
   
   
     formNombreMascota.style.borderColor = 'white';
@@ -58,8 +65,8 @@ function limpiarForm(){
 
 
     butFormCrear.disabled = false;
+    butformActualizar.disabled = true;
 }
-
 
 function validacionNombreMascota(){
      let textformNombreMascota = formNombreMascota.value;
@@ -166,13 +173,123 @@ function validacionDeData (){
 
 }
 
+function pintarCita(cita){
+
+    formNombreMascota.value = cita['NOMBRE_MASCOTA']
+    formNombreDueño.value = cita['NOMBRE_DUENO']
+    formCedula.value = cita['CEDULA']
+    formDireccion.value = cita['DIRECCION']
+    formLatitud.value = cita['LATITUD']
+    formLongitud.value = cita['LONGITUD']
+
+    formDoctor.selectedIndex = [...formDoctor.options].findIndex (option => option.text === cita['DOCTOR']);
+    
+    formFechaIngreso.value = cita['FECHA_CITA']
+
+    formSelectCalificacion.selectedIndex =  cita['CALIFICACION']
+    movemap(cita['LATITUD'],cita['LONGITUD']);
+
+
+    window.localStorage.setItem("idCita",cita._id);
+}
 
 ///funciones de la tabla
-function getExpedineteById(index){
+function butTableActualizarCita(but){
+    let id = but.parentNode.parentNode.id;
     butFormCrear.disabled = true;
+    butformActualizar.disabled = false;
+
+    getCitaById(id).then((res)=>{
+        pintarCita(res[0]);
+    });
+
 }
 
 
+function pintarListadoCitas(listado){
+    
+    let tableRecord =  document.querySelector('#tableRecord');
+    if(tableRecord != null){
+        tableRecord.remove();
+    }
+
+    const listadoLength = listado.length;
+    if(listadoLength > 0){
+        let divtable = document.querySelector('#divcontainertable');
+        let table = document.createElement('table');
+        let thead = document.createElement('thead');
+        let tbody = document.createElement('tbody');
+        let trhead = document.createElement('tr');  
+
+        table.id = 'tableRecord';
+        const arraydata = ['Nombre de mascota','Nombre del dueno','cedula','Direccion','Fecha de cita','Doctor','Calificacion','Borrar','Actualizar'];
+        const arraydatatd = ['NOMBRE_MASCOTA','NOMBRE_DUENO','CEDULA','DIRECCION','FECHA_CITA','DOCTOR','CALIFICACION'];
+
+        for(let i = 0; i < arraydata.length; i++){
+            let th =  document.createElement('th');
+            th.innerHTML = arraydata[i];
+            trhead.appendChild(th);
+        }
+
+        thead.appendChild(trhead);
+        table.appendChild(thead);
+        
+        
+        
+
+        for(let i = 0; i < listadoLength; i++){
+            let row = document.createElement('tr');  
+            row.id = listado[i]['_id']
+            for(let j = 0; j < arraydatatd.length ; j++){
+                let td = document.createElement("td");
+                td.innerHTML = listado[i][arraydatatd[j]]
+                row.appendChild(td);
+            }
+            let tdBorrar = document.createElement("td");
+            let tdActualizar = document.createElement("td");
+            tdBorrar.innerHTML = '<button type="button" id="butTableBorrar" onclick="butTableBorrarCita(this)">Borrar</button>';
+            tdActualizar.innerHTML = '<a href="#divformconatiner" type="button" id="butTableActualizar" onclick="butTableActualizarCita(this)">Actualizar</a>';
+            row.appendChild(tdBorrar);
+            row.appendChild(tdActualizar);
+            tbody.appendChild(row);
+           
+        }
+        table.appendChild(tbody);
+        divtable.appendChild(table);
+    }   
+}
+
+function butTableBorrarCita(but){
+     
+    Swal.fire({
+        title: 'deseas borrar el expediente?',
+        showDenyButton: true,
+        confirmButtonText: 'Borrar',
+        denyButtonText: `Cancelar`,
+        }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+
+          let id = but.parentNode.parentNode.id;
+
+            borrarCita(id).then((res)=>{
+                Swal.fire({
+                title: 'Cita borrada',
+                text:  res.msj,
+                icon: 'success'
+                });  
+                // getCitas()
+                // .then((listado)=>{
+                //     pintarListadoCitas(listado)
+                // });
+                // limpiarForm();
+            
+        });
+        } else if (result.isDenied) {
+            Swal.fire('No se realizo ningun cambio', '', 'info')
+        }
+        })
+}
 
 //botones del form
 butFormCancel.addEventListener('click',function(){
@@ -202,7 +319,18 @@ butFormCrear.addEventListener("click",function(){
         reverseButtons: true
         }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href = "/pantallaPago.html"
+            crearCita(
+            formNombreMascota.value,
+            formNombreDueño.value,
+            formCedula.value,
+            formDireccion.value,
+            formLatitud.value,
+            formLongitud.value,
+            formDoctor.options[formDoctor.selectedIndex].text,
+            formFechaIngreso.value,
+            formSelectCalificacion.value
+            )
+            window.location.href = "/Frontend/pantallaPago.html"
         } else if (
             result.dismiss === Swal.DismissReason.cancel
         ) {
@@ -218,10 +346,34 @@ butFormCrear.addEventListener("click",function(){
 })
 
 butformActualizar.addEventListener("click",function(){
-    limpiarForm();
-    validacionDeData();
+  
+    let _id = window.localStorage.getItem('idCita')
+    if(validacionDeData()){
+        actualizarCita(
+            _id,
+            formNombreMascota.value,
+            formNombreDueño.value,
+            formCedula.value,
+            formDireccion.value,
+            formLatitud.value,
+            formLongitud.value,
+            formDoctor.options[formDoctor.selectedIndex].text,
+            formFechaIngreso.value,
+            formSelectCalificacion.value
+            )
+    }
+    //limpiarForm();
 })
 
 // botones de la tabla
 
-butTableActualizar.addEventListener('click',getExpedineteById);
+//butTableActualizar.addEventListener('click',getExpedineteById(this));
+
+window.addEventListener('load',(event)=>{
+    butformActualizar.disabled = true;
+    getCitas()
+    .then((listado)=>{
+        pintarListadoCitas(listado)
+    });
+    limpiarForm();
+})
