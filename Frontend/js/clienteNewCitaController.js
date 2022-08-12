@@ -215,6 +215,7 @@ butFormCrear.addEventListener("click",function(){
             formLongitud.value,
             formDoctor.options[formDoctor.selectedIndex].text,
             formFechaIngreso.value,
+            0
            
             )
             window.location.href = "/Frontend/pantallaPago.html"
