@@ -226,6 +226,52 @@
             />
           </div>
         </div>
+
+
+
+        <!-- row8 -->
+        <div class="row rowshight">
+          <!--columna 1 row 6-->
+          <div class="cols">
+            <label for="formFechaIngreso">Calificacion</label>
+          </div>
+          <!--columna 2 row 6-->
+           <!--columna 2 row 6-->
+        <div class="cols rowshight">
+          <select id="selectCalificacion" style="font-size: large ;">
+                <option value="0" >Selecionar Calificacion<i class="fa-solid fa-star-sharp"></i></option>
+                <option value="1">
+                 &#9733;
+                </option>
+                <option value="2" >
+                  &#9733;
+                  &#9733;
+                </option>
+                <option value="3">
+                  &#9733;
+                  &#9733;
+                  &#9733;
+                </option>
+                <option value="4">
+                  &#9733;
+                  &#9733;
+                  &#9733;
+                 &#9733;
+                </option>
+                <option value="5">
+                  &#9733;
+                  &#9733;
+                  &#9733;
+                  &#9733;
+                  &#9733;
+                </option>
+              </select>
+
+          </div>
+        </div>
+
+
+
         <div class="row rowshight">
           <div class="cols">
             <button type="button" id="butFormCancel" class="buts">
@@ -248,115 +294,6 @@
     <!-- ####################################################################################################################################################################################################### -->
     <div class="divTitulo"><h3>Listado de reservaciones</h3></div>
     <div id="divcontainertable">
-      <table id="tableRecord">
-        <thead>
-          <tr>
-            <th>Nombre de mascota</th>
-            <th>Nombre del dueno</th>
-            <th>cedula</th>
-            <th>Direccion</th>
-            <th>Fecha de entrada</th>
-            <th>Fecha de salida</th>
-            <th>Calificacion</th>
-            <th>Cancelar</th>
-            <th>Actualizar</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Santi</td>
-            <td>Jose Alvarado</td>
-            <td>1234567</td>
-            <td>San Jose tibas</td>
-            <td>8/16/2022 6:00:00pm</td>
-            <td>8/18/2022 11:00:00am</td>
-            <td >
-              <select id="selectCalificacion" style="font-size: large ;">
-                <option value="0" >Selecionar Calificacion<i class="fa-solid fa-star-sharp"></i></option>
-                <option value="1">
-                 &#9733;
-                </option>
-                <option value="2" >
-                  &#9733;
-                  &#9733;
-                </option>
-                <option value="3">
-                  &#9733;
-                  &#9733;
-                  &#9733;
-                </option>
-                <option value="4">
-                  &#9733;
-                  &#9733;
-                  &#9733;
-                 &#9733;
-                </option>
-                <option value="5">
-                  &#9733;
-                  &#9733;
-                  &#9733;
-                  &#9733;
-                  &#9733;
-                </option>
-              </select>
-              <button type="button" id="tableButEnviarCalificacion" style="font-size:large;">enviar Calificacion</button>
-            </td>   
-            <td><button type="button">Borrar</button></td>
-            <td>
-              <a href="#divformconatiner" type="button" id="butTableActualizar"
-                >Actualizar</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>Campana</td>
-            <td>Freddy Alvarado</td>
-            <td>987456</td>
-            <td>San Jose tibas</td>
-            <td>9/20/2022 6:00:00pm</td>
-            <td>9/29/2022 11:00:00am</td>
-            <td >
-              <select id="selectCalificacion" style="font-size: large ;">
-                <option value="0" >Selecionar Calificacion<i class="fa-solid fa-star-sharp"></i></option>
-                <option value="1">
-                 &#9733;
-                </option>
-                <option value="2" >
-                  &#9733;
-                  &#9733;
-                </option>
-                <option value="3">
-                  &#9733;
-                  &#9733;
-                  &#9733;
-                </option>
-                <option value="4">
-                  &#9733;
-                  &#9733;
-                  &#9733;
-                 &#9733;
-                </option>
-                <option value="5">
-                  &#9733;
-                  &#9733;
-                  &#9733;
-                  &#9733;
-                  &#9733;
-                </option>
-              </select>
-              <button type="button" id="tableButEnviarCalificacion" style="font-size:large;">enviar Calificacion</button>
-            </td>   
-            <td>
-              <button type="button" id="butTableBorrar">Borrar</button>
-            </td>
-            <td>
-              <a href="#divformconatiner" type="button" id="butTableActualizar"
-                >Actualizar</a
-              >
-            </td>
-          </tr>
-        </tbody>
-      </table>
     </div>
 
 
@@ -415,6 +352,12 @@
   <script src="https://kit.fontawesome.com/6e5cd7b048.js" crossorigin="anonymous"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
  
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="/Frontend/js/adminReservacionesController.js"></script>
+  <script src="/Frontend/js/servicio-Reservacion.js"></script>
+
+
+<script src="/Frontend/js/validacionRoles.js"></script>
   
 </html>

@@ -6,14 +6,12 @@ let formDireccion = document.querySelector('#formDireccion');
 let formDoctor = document.querySelector('#formDoctor');
 let formFechaIngreso = document.querySelector('#formFechaIngreso');
 let formFechaSalida = document.querySelector('#formFechaSalida');
+let formLatitud = document.querySelector('#txtLat');
+let formLongitud = document.querySelector('#txtLng');
+
 //botones
-let butformActualizar = document.querySelector('#butFormActualizar');
 let butFormCrear = document.querySelector('#butFormCrear');
 let butFormCancel = document.querySelector('#butFormCancel');
-//tabla
-let tableRecord =  document.querySelector('#tableRecord');
-let butTableActualizar = document.querySelector('#butTableActualizar');
-let butTableBorrar = document.querySelector('#butTableBorrar');
 
 
 
@@ -29,34 +27,34 @@ function alerttexto(texto){
 
 
 function  validationJustTextNum(texto){
-    const pattern = new RegExp('^[A-Z0-9]+$', 'i');
-    
+    const pattern = /^[A-Z0-9\s]+$/gi;
     return  pattern.test(texto);
 }
 
-function  validationJustNum(numero){
-    const pattern = new RegExp('^[0-9]+$', 'i');
+function  validationJustCedula(numero){
+//   const pattern = /(\d{1}-\d{1,4}-\d{1,4})+$/g;
+     const pattern = /(\d{1}-\d{4}-\d{4})+$/g;
     return  pattern.test(numero);
 }
-
 
 function limpiarForm(){
     formNombreMascota.value = '';
     formNombreDueño.value = '';
     formCedula.value = '';
     formDireccion.value = '';
-    formDoctor.value = 0;
     formFechaIngreso.value = "";
     formFechaSalida.value = "";
-  
+    formLatitud.value = "";
+    formLongitud.value = "";
   
     formNombreMascota.style.borderColor = 'white';
     formNombreDueño.style.borderColor = 'white';
     formCedula.style.borderColor = 'white';
     formDireccion.style.borderColor = 'white';
-    formDoctor.style.borderColor = 'white';
     formFechaIngreso.style.borderColor = 'white';
     formFechaSalida.style.borderColor = 'white';
+
+
 
     butFormCrear.disabled = false;
 }
@@ -71,6 +69,7 @@ function validacionNombreMascota(){
     }
     else{
         formNombreMascota.style.borderColor = 'palegreen';
+        return true;
     }
 }
 
@@ -83,12 +82,13 @@ function validacionNombreDueno(){
     } 
     else{
         formNombreDueño.style.borderColor = 'palegreen';
+        return true;
     }
 }
 
 function validacionCedula(){
     let numFormCedula =  formCedula.value;
-    if(!validationJustNum(numFormCedula)){
+    if(!validationJustCedula(numFormCedula)){
         alerttexto('Numero de cedula solo admite numeros y no puede estar vacio')
         formCedula.style.borderColor = 'red';
         return;
@@ -96,6 +96,7 @@ function validacionCedula(){
  
     else{
         formCedula.style.borderColor = 'palegreen';
+        return true;
     }
 }
 
@@ -110,20 +111,11 @@ if(!validationJustTextNum(textformDireccion)){
  
     else{
         formDireccion.style.borderColor = 'palegreen';
+        return true;
     }
 }
 
-function validacionDoctor(){
-  let textformDoctor = formDoctor.value;
-  if(textformDoctor == "0"){
-        alerttexto('El campo doctor es obligatorio')
-        formDoctor.style.borderColor = 'red';
-        return;
-  }
-  else{
-    formDoctor.style.borderColor = 'palegreen';
-  }
-}
+
 
 function validacionFechaEntrada(){
     let textformFechaIngreso = formFechaIngreso.value; 
@@ -141,6 +133,7 @@ function validacionFechaEntrada(){
         }
         else{
             formFechaIngreso.style.borderColor = 'palegreen';
+            return true;
         }
     }
     else{
@@ -157,6 +150,7 @@ function validacionFechaSalida(){
     {
 
         formFechaSalida.style.borderColor = 'palegreen';
+        return true;
         
     }
     else{
@@ -167,13 +161,22 @@ function validacionFechaSalida(){
 }
 
 function validacionDeData (){
-    validacionNombreMascota();
-    validacionNombreDueno();
-    validacionCedula();
-    validacionDireccion();
-    validacionFechaEntrada();
-    validacionDoctor();
-    validacionFechaSalida();
+
+
+
+     if(validacionNombreMascota()){
+        if(validacionNombreDueno()){
+            if(validacionCedula()){
+                if(validacionDireccion()){
+                    if(validacionFechaEntrada()){
+                            if(validacionFechaSalida()){
+                                return true
+                            }else{return false;}
+                    }else{return false;}
+                }else{return false;}
+            }else{return false;}
+        }else{return false;}
+    }else{return false;}
 }
 
 
@@ -191,14 +194,62 @@ butFormCancel.addEventListener('click',function(){
 })
 
 butFormCrear.addEventListener("click",function(){
-    validacionDeData();
+if(validacionDeData()){
+
+        const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: 'btn btn-success',
+            cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+        })
+
+        swalWithBootstrapButtons.fire({
+        title: 'El Moton a pagar?',
+        text: "El moton a pgar son 75000 colones",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Si, Continuar',
+        cancelButtonText: 'No',
+        reverseButtons: true
+        }).then((result) => {
+        if (result.isConfirmed) {
+            crearReservacion(
+                formNombreMascota.value ,
+                formNombreDueño.value,
+                formCedula.value,
+                formDireccion.value,
+                formLatitud.value,
+                formLongitud.value,
+                formFechaIngreso.value,
+                formFechaSalida.value,
+                0
+                )
+
+            window.location.href = "/Frontend/pantallaPago.html"
+        } else if (
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            
+            limpiarForm();
+        }
+        })
+
+    }
 })
 
-butformActualizar.addEventListener("click",function(){
-    limpiarForm();
-    validacionDeData();
+
+
+
+
+
+
+
+
+window.addEventListener('load',(event)=>{
+
+   validacionPermisos();  
+   limpiarForm();
+
 })
 
-// botones de la tabla
-
-butTableActualizar.addEventListener('click',getExpedineteById)

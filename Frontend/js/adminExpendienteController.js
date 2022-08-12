@@ -439,7 +439,7 @@ function butborrarExpediente(but){
            let _id = but.parentNode.parentNode.id;
             borrarExpediente(_id).then((res)=>{
                 Swal.fire({
-                title: 'Expediente borradp',
+                title: 'Expediente borrado',
                 text:  res.msj,
                 icon: 'success'
                 });  
