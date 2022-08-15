@@ -43,15 +43,15 @@
                 <li><a href= "/Frontend/index.html"><type="button"><i class="fa-solid fa-house-user"></i></button></a></li>
             
                 <li class="submenu">
-                    <a href="/Frontend/index.html"><span>Veterinaria<span ></span></a>
+                    <a id="citaseccion" href="/Frontend/index.html"><span>Veterinaria<span ></span></a>
                     <ul class="children">
                         <li><a href="/Frontend/clienteMascota.html">Mis mascotas </a></li>
                         <li><a href="/Frontend/clienteNewCita.html">Nueva cita</a></li>
                     </ul>
                 </li>
                 
-                <li class="submenu">
-                    <a href="/Frontend/clienteHotel.html">Hotel</a>
+                <li  class="submenu">
+                    <a id="hotelseccion" href="/Frontend/clienteHotel.html">Hotel</a>
                     <ul class="children">
                         <li><a href="/Frontend/clienteReservacion.html">Reservaciones </a></li>
 
@@ -107,7 +107,8 @@
                     />
                 </div>
             
-                <button id="btnregistrar" type="button">Ingresar</button>  
+                <!-- <button id="btnregistrar" type="button">Ingresar</button>   -->
+                <button id="btnloggin" type="button" onclick="BuscarUsuarioLoggin()">Ingresar</button>  
                 <h1>Nuevo usuario</h1>
                 <a href= "/Frontend/registro.html"><button id="btnregistrar" type="button">Ingrese Aquí</button> </a> 
                 </div>
@@ -160,7 +161,11 @@
 </footer>
 </body>
 <script src="https://kit.fontawesome.com/6e5cd7b048.js" crossorigin="anonymous"></script>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="/Frontend/js/validacionUsuarioController.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/Frontend/js/validacionUsuarioController.js"></script>
+<script src="/Frontend/js/indexController.js"></script>
+<script src="/Frontend/js/Servicio-Usuarios.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/Frontend/js/validacionRoles.js"></script>
 
 </html>

@@ -7,6 +7,7 @@ const morgan = require('morgan');
 const Expediente = require('./rutas/Expediente');
 const Cita = require('./rutas/Cita');
 const Reservacion = require('./rutas/Reservacion');
+const Usuario = require('./rutas/Usuario');
 
 // config de env
 const dotenv = require('dotenv')
@@ -45,7 +46,9 @@ function(error,dababase){
 
 app.use("/api",Expediente);
 app.use('/api',Cita);
-app.use('/api',Reservacion)
+app.use('/api',Reservacion);
+app.use('/api',Usuario);
+
 
 
 

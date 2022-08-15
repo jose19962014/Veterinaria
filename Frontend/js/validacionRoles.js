@@ -1,6 +1,6 @@
 function validacionPermisos(){
-    window.localStorage.setItem('rol','cliente');
-    let rol = window.localStorage.getItem('rol');
+   // window.sessionStorage.setItem('rol','cliente');
+    let rol = window.sessionStorage.getItem('ROL');
 
     let urlusuarios  = document.querySelector('#urlusuarios');
     let urlmascotas  = document.querySelector('#urlmascotas');
@@ -9,6 +9,10 @@ function validacionPermisos(){
     let urlcitas  = document.querySelector('#urlcitas');
     let urlreservaciones  = document.querySelector('#urlreservaciones');
     let adminseccion  = document.querySelector('#adminseccion');
+    let citaseccion  = document.querySelector('#citaseccion');
+    let hotelseccion  = document.querySelector('#hotelseccion');
+
+
 
 
     switch(rol){
@@ -17,15 +21,27 @@ function validacionPermisos(){
             break;
         case 'doctor':
                 urlpadecimientos.remove();
-                urlusuarios.remove();
-                urlmascotas.remove();
-                urlpadecimientos.remove();
+                //urlusuarios.remove();
+                //urlmascotas.remove();
                 urlexpediente.remove();
-                urlcitas.remove();
-                urlreservaciones.remove();
-            break;            
-         
+                //urlcitas.remove();
+               // urlreservaciones.remove();
+            break; 
+        case 'admin':
+            // nothing
+            break;                         
+        default:
+            adminseccion.remove();
+            citaseccion.remove()
+            hotelseccion.remove()
+            
+
     }
    
     
 }
+
+
+window.addEventListener('load',(event)=>{
+    validacionPermisos();
+})
