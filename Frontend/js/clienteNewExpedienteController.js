@@ -169,5 +169,20 @@ butFormCrear.addEventListener("click",function(){
 
 
 
+function fillOutForm(){
 
+ let storage = window.sessionStorage;
+ formNombreDueño.value =  storage.getItem('NOMBRE_USARIO');
+ formLatitud.value = storage.getItem('LATITUD');
+ formLongitud.value = storage.getItem('LONGITUD');
+ formDireccion.value = storage.getItem('DIRECCION');
+ formCedula.value = storage.getItem('CEDULA');
+ movemap(storage.getItem('LATITUD'),storage.getItem('LONGITUD'));
 
+}
+
+window.addEventListener('load',(event)=>{
+
+ fillOutForm();
+
+})

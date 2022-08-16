@@ -369,11 +369,24 @@ butformActualizar.addEventListener("click",function(){
 
 //butTableActualizar.addEventListener('click',getExpedineteById(this));
 
+function fillOutForm(){
+
+ let storage = window.sessionStorage;
+ formNombreDueño.value =  storage.getItem('NOMBRE_USARIO');
+ formLatitud.value = storage.getItem('LATITUD');
+ formLongitud.value = storage.getItem('LONGITUD');
+ formDireccion.value = storage.getItem('DIRECCION');
+ formCedula.value = storage.getItem('CEDULA');
+ movemap(storage.getItem('LATITUD'),storage.getItem('LONGITUD'));
+
+}
+
 window.addEventListener('load',(event)=>{
     butformActualizar.disabled = true;
     getCitas()
     .then((listado)=>{
         pintarListadoCitas(listado)
+        fillOutForm();
     });
     limpiarForm();
 })

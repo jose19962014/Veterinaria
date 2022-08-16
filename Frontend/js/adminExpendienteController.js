@@ -19,6 +19,8 @@ let butTableBorrar = document.querySelector('#butTableBorrar');
 
 
 
+
+
 /// funciones para la tabla del form
 function borrarPadecimiento(but){
     but.parentNode.parentNode.remove();
@@ -509,6 +511,19 @@ function pintarListadoExpedientes(listado){
 }
 
 
+
+function fillOutForm(){
+
+ let storage = window.sessionStorage;
+ formNombreDueño.value =  storage.getItem('NOMBRE_USARIO');
+ formLatitud.value = storage.getItem('LATITUD');
+ formLongitud.value = storage.getItem('LONGITUD');
+ formDireccion.value = storage.getItem('DIRECCION');
+ formCedula.value = storage.getItem('CEDULA');
+ movemap(storage.getItem('LATITUD'),storage.getItem('LONGITUD'));
+
+}
+
 ////funcion cuando la pag termina de cargar
 
 window.addEventListener('load',(event)=>{
@@ -519,7 +534,8 @@ window.addEventListener('load',(event)=>{
     agregarOptionsSelect();
     getExpedientes()
         .then((listado)=>{
-            pintarListadoExpedientes(listado)
+            pintarListadoExpedientes(listado);
+            fillOutForm();
         });
     
 

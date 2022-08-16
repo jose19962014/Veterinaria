@@ -12,6 +12,7 @@ function BuscarUsuarioLoggin(){
         storage.setItem('CEDULA',usuario['CEDULA']);
         storage.setItem('DIRECCION',usuario['DIRECCION']);
         storage.setItem('LONGITUD',usuario['LONGITUD']);
+        storage.setItem('LATITUD',usuario['LATITUD']);
         storage.setItem('ROL',usuario['ROL']);
         
         //validacionPermisos();    
