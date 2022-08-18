@@ -21,12 +21,18 @@ function validacionPermisos(){
             break;
         case 'doctor':
                 urlpadecimientos?.remove();
-                //urlusuarios.remove();
-                //urlmascotas.remove();
+                urlusuarios.remove();
+                //urlexpediente?.remove();
+                urlcitas.remove();
+               // urlreservaciones.remove();
+            break;
+        case 'secretaria':
+                urlpadecimientos?.remove();
+                urlusuarios.remove();
                 urlexpediente?.remove();
                 //urlcitas.remove();
                // urlreservaciones.remove();
-            break; 
+            break;  
         case 'admin':
             // nothing
             break;                         
