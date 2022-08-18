@@ -151,6 +151,33 @@ router.get('/buscar-expediente-id',(req,res)=>{
 
 });
 
+
+router.get('/buscar-expediente-cedula',(req,res)=>{
+    let CEDULA = req.query.CEDULA;
+
+    Expediente.find({CEDULA: CEDULA},
+        (error,expedienteDB)=>{
+        if(error){
+            res.status(500).json({
+                resultado:false,    
+                msj:"Error al buscar mascota",
+                error
+
+            });
+        }
+        else{
+            res.status(200).json({
+                resultado:true,    
+                msj:"Listado Exitoso",
+                expediente: expedienteDB
+            });
+        }
+    });
+
+});
+
+
+
 router.get("/listar-expediente",(req,res)=>{
     Expediente.find((error,listado)=>{
         if(error){

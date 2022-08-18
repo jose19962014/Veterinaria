@@ -143,7 +143,32 @@ butformActualizar.addEventListener("click",function(){
             formLongitud.value ,
             formcontendorImagen.src
 
-        );
+        ).then((res)=>{
+            let CEDULA = window.sessionStorage.CEDULA;
+            let NOMBRE_MASCOTA = window.localStorage.NOMBRE_MASCOTA;
+            
+            actualizarcitaBycedulaAndMascota(
+                CEDULA,
+                NOMBRE_MASCOTA,
+                formNombreMascota.value,
+                formNombreDueño.value,
+                formCedula.value,
+                formDireccion.value,
+                formLatitud.value,
+                formLongitud.value 
+            ).then((res)=>{
+                     let CEDULA = window.sessionStorage.getItem('CEDULA')
+                     window.localStorage.setItem('NOMBRE_MASCOTA',formNombreMascota.value)
+
+                    getCitaByCedulaAndMascota(CEDULA,formNombreMascota.value)
+                        .then((listado)=>{
+                            pintarListadoCitas(listado);
+                        });
+            })
+            
+        });
+
+       
         
     }
 
@@ -153,14 +178,6 @@ formbutFormCancel.addEventListener('click',function(){
     window.location.href="/clienteMascota.html";
 });
 
-
-addEventListener('DOMContentLoaded', (event) => {
-    formObservaciones.value = "sobre peso \n uñas largas";
-    formDireccion.value = "San jose Tibas";
-    formCedula.value = "5-0767-0898"; 
-    formNombreDueño.value = "Jose"; 
-    formNombreMascota.value = "Santi"; 
-});
 
 
 function selectCalifiacionChange(but){
@@ -254,6 +271,7 @@ function pintarListadoCitas(listado){
 function fillOutForm(){
 
  let storage = window.sessionStorage;
+ formNombreMascota.value =  window.localStorage.getItem('NOMBRE_MASCOTA');
  formNombreDueño.value =  storage.getItem('NOMBRE_USARIO');
  formLatitud.value = storage.getItem('LATITUD');
  formLongitud.value = storage.getItem('LONGITUD');
@@ -267,16 +285,19 @@ function fillOutForm(){
 window.addEventListener('load',(event)=>{
 
  limpiarForm();
-     window.localStorage.setItem('UsuarioCedula','4-0000-0333')
     validacionPermisos();  
   
-   let cedula = window.localStorage.getItem('UsuarioCedula')
-   
-    getCitaByCedula(cedula)
+     let CEDULA = window.sessionStorage.getItem('CEDULA')
+    let NOMBRE_MASCOTA = window.localStorage.getItem('NOMBRE_MASCOTA')
+
+    getCitaByCedulaAndMascota(CEDULA,NOMBRE_MASCOTA)
         .then((listado)=>{
             pintarListadoCitas(listado);
             fillOutForm();
         });
-    
+
+
+       
+
 })
 

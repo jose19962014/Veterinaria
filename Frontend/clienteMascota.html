@@ -47,7 +47,7 @@
                     <a id="adminseccion" href="#"> admin</a>
                     <ul class="children">
                         <li id="urlusuarios"><a href="/Frontend/adminUsuarios.html">Modificar usuarios </a></li>
-                        <li id="urlmascotas"><a href="/Frontend/adminModificarMascotas.html">Modificar mascotas </a></li>
+                        <!-- <li id="urlmascotas"><a href="/Frontend/adminModificarMascotas.html">Modificar mascotas </a></li> -->
                         <li id="urlpadecimientos"><a href="/Frontend/adminPadecimientos.html">Modificar padecimientos </a></li>
                         <li id="urlexpediente"><a href="/Frontend/adminExpendiente.html">Modificar expediente </a></li>
                         <li id="urlcitas"><a href="/Frontend/adminCitas.html">Modificar citas </a></li>
@@ -67,29 +67,9 @@
       <button id="butAnadirNuevaMascota">Click aqui para Anadir Nueva Mascota</button>
     </div>
     
-    <div id="contenedorTabla">
+    <div id="divcontainertable">
        <div class="divTitulo"><h3>Listado de mis mascotas</h3></div>
-      <table id="mascotas">
-        <thead>
-          <tr>
-            <th>Numero</th>
-            <th>Mascota</th>
-            <th>Expediente</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Santi</td>
-            <td><a href="/Frontend/clienteExpediente.html">Expediente</a></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Coco</td>
-            <td><a href="/Frontend/clienteExpediente.html">Expediente</a></td>
-          </tr>
-        </tbody>
-      </table>
+
     </div>
 </body>
 
@@ -129,8 +109,11 @@
        
 </footer>
 
-
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://kit.fontawesome.com/6e5cd7b048.js" crossorigin="anonymous"></script>
   <script src="/Frontend/js/clienteMascotasController.js"></script>
+  <script src="/Frontend/js/servicio-Expediente.js"></script>
   <script src="/Frontend/js/validacionRoles.js"></script>
+
+  
 </html>

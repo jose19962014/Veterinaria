@@ -94,6 +94,33 @@ const getCitaByCedula = async(_id) =>{
 }
 
 
+const getCitaByCedulaAndMascota = async(CEDULA,NOMBRE_MASCOTA) =>{
+
+    const params = new URLSearchParams([['CEDULA', CEDULA],['NOMBRE_MASCOTA',NOMBRE_MASCOTA]]);
+    let citas = axios.get('http://localhost:3000/api/obtener-cita-by-cedula-and-mascota',{params})
+    .then((res)=>{
+            if(res.data.respuesta ==false){
+                switch(res.data.error.code){
+                case 11000:
+                     Swal.fire({
+                            title: 'Error al cargar el expediente',
+                            text: texto,
+                            icon: 'warning'
+                            });
+                            break;
+                 }
+            }
+            else{
+                return res.data.citas
+            }
+
+
+    });
+
+    return citas;
+}
+
+
 
 const actualizarCalificacionCita = async(_id,CALIFICACION)=>{
 
@@ -128,6 +155,55 @@ let result = await axios({
     
     return result
 }
+
+
+const actualizarcitaBycedulaAndMascota = async(CEDULA,NOMBRE_MASCOTA,new_NOMBRE_MASCOTA,new_NOMBRE_DUENO,new_CEDULA,new_DIRECCION,new_LATITUD,new_LONGITUD)=>{
+
+ await axios({
+        method:'put',
+        url:'http://localhost:3000/api/actualizar-citas-by-cedula-mascota',
+        responseType:'json',
+        data:{
+            CEDULA:CEDULA,
+            NOMBRE_MASCOTA:NOMBRE_MASCOTA,
+            new_NOMBRE_MASCOTA:new_NOMBRE_MASCOTA,
+            new_NOMBRE_DUENO:new_NOMBRE_DUENO,
+            new_CEDULA:new_CEDULA,
+            new_DIRECCION:new_DIRECCION,
+            new_LATITUD:new_LATITUD,
+            new_LONGITUD:new_LONGITUD
+        }
+    }).
+    then((res)=>{
+        if(res.data.resultado == false){
+        
+            switch(res.data.error.code){
+                case 11000:
+                     Swal.fire({
+                            title: 'Error al actulizar calificacion',
+                            text: 'error intente de nuevo',
+                            icon: 'warning'
+                            });
+                            break;
+            }
+
+       }
+        else{
+            Swal.fire({
+            title: ' Actualizado',
+            text: 'actuailizado correctamente',
+            icon: 'success'
+            });   
+           
+       }
+
+    })
+    
+   
+}
+
+
+
 
 const getCitas = async() =>{
 

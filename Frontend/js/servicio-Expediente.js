@@ -231,3 +231,31 @@ const borrarExpediente = async(_id)=>{
          
 
 }
+
+
+const getExpedientesbycedula = async(CEDULA)=>{
+
+
+    const params = new URLSearchParams([['CEDULA', CEDULA]]);
+    const listado =  await axios.get('http://localhost:3000/api/buscar-expediente-cedula',{params})
+    .then((res)=> {
+       if(res.data.resultado == false){
+        
+            switch(res.data.error.code){
+                case 11000:
+                     Swal.fire({
+                            title: 'Error al cargar el Mascota',
+                            text: texto,
+                            icon: 'warning'
+                            });
+                            break;
+            }
+
+       }
+       else{
+           return res.data.expediente;
+       }
+    })
+
+    return listado;
+}

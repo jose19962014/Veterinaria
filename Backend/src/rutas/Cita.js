@@ -83,6 +83,29 @@ router.get('/obtener-cita-by-cedula',(req,res)=>{
         })
 })
 
+
+router.get('/obtener-cita-by-cedula-and-mascota',(req,res)=>{
+   let CEDULA = req.query.CEDULA;
+   let NOMBRE_MASCOTA = req.query.NOMBRE_MASCOTA;
+    Cita.find({CEDULA:CEDULA,NOMBRE_MASCOTA:NOMBRE_MASCOTA},
+        (error,citas)=>{
+            if(error){
+                res.status(500).json({
+                    resultado:false,
+                    msj:"error al obtner cita",
+                    error
+                })
+            }
+            else{
+                res.status(200).json({
+                    resultado:true,
+                    msj:"consulta por id exitosa",
+                    citas
+                })
+            }
+        })
+})
+
 router.get('/obtener-citas',(req,res)=>{
     Cita.find((error,listado)=>{
         if(error){
@@ -127,6 +150,45 @@ router.put('/actualizar-cita',(req,res)=>{
    
     })
 })
+
+
+router.put('/actualizar-citas-by-cedula-mascota',(req,res)=>{
+
+    let body = req.body;
+    let error;
+
+
+    Cita.updateMany({CEDULA:body.CEDULA,NOMBRE_MASCOTA:body.NOMBRE_MASCOTA},{
+
+        NOMBRE_MASCOTA:body.new_NOMBRE_MASCOTA,
+        NOMBRE_DUENO:body.new_NOMBRE_DUENO,
+        CEDULA:body.new_CEDULA,
+        DIRECCION:body.new_DIRECCION,
+        LATITUD:body.new_LATITUD,
+        LONGITUD:body.new_LONGITUD
+
+    },(error,info)=>{ 
+
+        if(error){
+                res.status(500).json({
+                resultado:false,    
+                msj:"Error al actualizar cita",
+                error
+
+            });            
+        }
+        else{
+                res.status(200).json({
+                resultado:true,    
+                msj:"Actualizacion exitosa exitosamente",
+                info 
+             });
+                 
+        }
+   
+    })
+
+});
 
 router.put('/actualizar-calificacion-cita',(req,res)=>{
 

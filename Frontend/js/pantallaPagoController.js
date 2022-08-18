@@ -185,7 +185,7 @@ butFormCancel.addEventListener('click',function(){
 
 butFormCrear.addEventListener("click",function(){
     if(validacionDeData()){
-     document.location.href="/factura.html";
+     document.location.href="/Frontend/factura.html";
     }
    
 })

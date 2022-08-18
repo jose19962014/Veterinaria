@@ -17,13 +17,13 @@ function validacionPermisos(){
 
     switch(rol){
         case 'cliente':
-                adminseccion.remove();
+                adminseccion?.remove();
             break;
         case 'doctor':
-                urlpadecimientos.remove();
+                urlpadecimientos?.remove();
                 //urlusuarios.remove();
                 //urlmascotas.remove();
-                urlexpediente.remove();
+                urlexpediente?.remove();
                 //urlcitas.remove();
                // urlreservaciones.remove();
             break; 
@@ -31,9 +31,9 @@ function validacionPermisos(){
             // nothing
             break;                         
         default:
-            adminseccion.remove();
-            citaseccion.remove()
-            hotelseccion.remove()
+            adminseccion?.remove();
+            citaseccion?.remove()
+            hotelseccion?.remove()
             
 
     }
