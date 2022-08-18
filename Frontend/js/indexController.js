@@ -16,11 +16,13 @@ function BuscarUsuarioLoggin(){
         storage.setItem('ROL',usuario['ROL']);
         
         //validacionPermisos();    
-        window.location.reload();    
+       // window.location.reload();    
         Swal.fire({
                 title: 'usurio',
                 text: 'Loggin exitoso',
                 icon: 'success'
+                }).then(function(){
+                    window.location.href = '/Frontend/clienteMascota.html'
                 });  
 
 
